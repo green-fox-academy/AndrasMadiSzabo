@@ -1,30 +1,25 @@
-
 import javax.swing.*;
 
 import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class GoToCenter {
-    public static void mainDraw(Graphics graphics) {
-        // Create a function that draws a single line and takes 3 parameters:
-        // The x and y coordinates of the line's starting point and the graphics
-        // and draws a line from that point to the center of the canvas.
-        // Draw at least 3 lines with that function using a loop.
+public class FourRectangles {
+
+    public static void mainDraw(Graphics graphics){
+        // draw four different size and color rectangles.
+        // avoid code duplication.
 
 
-        for (int i = 0; i < 3; i++) {
-        drawLine(100*i, 200*i, graphics);
 
+        for (int i = 1; i < 5; i++) {
+        graphics.setColor(new Color(i*55, i*60, i*60));
+        graphics.fillRect(i*40, i*40, i*10, i*10);
         }
+
+
+
     }
-
-    public static void drawLine(int x, int y, Graphics graphics) {
-
-          graphics.setColor(new Color(255, 0, 0));
-          graphics.drawLine(x, y, WIDTH/2, HEIGHT/2);
-      }
-
 
     // Don't touch the code below
     static int WIDTH = 320;
