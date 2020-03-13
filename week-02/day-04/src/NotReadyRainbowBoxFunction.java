@@ -4,32 +4,23 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class FourRectangles {
+public class NotReadyRainbowBoxFunction {
+    public static void mainDraw(Graphics graphics) {
+        // Create a square drawing function that takes 3 parameters:
+        // The square size, the fill color, graphics
+        // and draws a square of that size and color to the center of the canvas.
+        // Create a loop that fills the canvas with rainbow colored squares (red, orange, yellow, green, blue, indigo, violet).
 
-    public static void mainDraw(Graphics graphics){
-        // draw four different size and color rectangles.
-        // avoid code duplication.
-
-
-
-        for (int i = 1; i < 5; i++) {
-
-            int size = (int) (Math.random()*200);
-            int x = (int) (Math.random()*WIDTH-size);
-            int y = (int) (Math.random()*HEIGHT-size);
-
-            graphics.setColor(new Color(randomColor(), randomColor(), randomColor()));
-            graphics.fillRect(x, y, size, size);
+        for (int i = 7; i < 0; i--) {
+            int size = 300-i*50;
         }
-
     }
 
-    public static int randomColor() {
-        return (int) (Math.random()*255);
+    public static void drawSquares (int size, int color, Graphics graphics) {
+        // ?????????????????????????????????????????????????????????????????????????????
+        graphics.setColor(Color.RED);
+        graphics.fillRect(WIDTH/2-size/2, HEIGHT/2-size/2, size, size);
     }
-
-
-
 
     // Don't touch the code below
     static int WIDTH = 320;

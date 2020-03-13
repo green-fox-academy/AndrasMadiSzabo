@@ -14,8 +14,11 @@ public class GoToCenter {
 
 
         for (int i = 0; i < 3; i++) {
-        drawLine(100*i, 200*i, graphics);
 
+            int x = (int) (Math.random()*320);
+            int y = (int) (Math.random()*320);
+
+            drawLine(x, y, graphics);
         }
     }
 

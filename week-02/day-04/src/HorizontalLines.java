@@ -11,10 +11,12 @@ public class HorizontalLines {
         // and draws a 50 long horizontal line from that point.
         // Draw at least 3 lines with that function using a loop.
 
-      //  int x = (int)Math.random()*270;
-        //int y = (int)Math.random()*270;
-        for (int i = 0; i < 4; i++) {
-        drawLine(i*100, i*100, graphics);
+        for (int i = 0; i < 3; i++) {
+
+            int x = (int) (Math.random() * 270);
+            int y = (int) (Math.random() * 270);
+
+            drawLine(x, y, graphics);
         }
     }
 

@@ -4,32 +4,23 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class FourRectangles {
+public class PurpleSteps {
+    public static void mainDraw(Graphics graphics) {
+        // Reproduce this:
+        // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/assets/r3.png]
 
-    public static void mainDraw(Graphics graphics){
-        // draw four different size and color rectangles.
-        // avoid code duplication.
-
-
-
-        for (int i = 1; i < 5; i++) {
-
-            int size = (int) (Math.random()*200);
-            int x = (int) (Math.random()*WIDTH-size);
-            int y = (int) (Math.random()*HEIGHT-size);
-
-            graphics.setColor(new Color(randomColor(), randomColor(), randomColor()));
-            graphics.fillRect(x, y, size, size);
+        for (int i = 1; i < 20; i++) {
+            int x = i*10;
+            int y = i*10;
+            graphics.setColor(new Color(135, 46, 145));
+            graphics.fillRect(x, y, 10, 10);
+            graphics.setColor(Color.BLACK);
+            graphics.drawRect(x, y, 10, 10);
         }
 
+
+
     }
-
-    public static int randomColor() {
-        return (int) (Math.random()*255);
-    }
-
-
-
 
     // Don't touch the code below
     static int WIDTH = 320;
