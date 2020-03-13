@@ -13,7 +13,18 @@ public class SubStr {
         System.out.println(subStr("this is what I'm searching in", "not"));
     }
 
+    String input = hhhh;
+    String q = h;
+
+
+
     public static int subStr(String input, String q) {
-        return -1;
+        for (int i = 0; i < q.length() -1; i++) {
+            if (input.charAt(i) == q.charAt(i)) {
+
+            } else
+                return -1;
+
+        }
     }
 }
