@@ -11,20 +11,16 @@ public class SubStr {
 
         //  should print: `-1`
         System.out.println(subStr("this is what I'm searching in", "not"));
+        System.out.println(subStr("this is what I'm searching in", "is"));
+
+
     }
 
-    String input = hhhh;
-    String q = h;
-
-
-
     public static int subStr(String input, String q) {
-        for (int i = 0; i < q.length() -1; i++) {
-            if (input.charAt(i) == q.charAt(i)) {
-
-            } else
-                return -1;
-
+        if (input.contains(q)) {
+            return input.indexOf(q);
+        } else {
+            return -1;
         }
     }
 }
