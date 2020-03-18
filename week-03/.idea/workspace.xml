@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="77c8e079-3e7f-4ad1-a294-94ad9388003a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../day-01/day-01.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day-01/src/HomeWork.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day-01/src/stablestudents/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day-01/src/stablestudents/StableStudents.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/AppendA.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/AppendA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/ChangeElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/ChangeElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/Colors.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/Colors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/CompareLength.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/CompareLength.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/DiagonalMatrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/DiagonalMatrix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/DoubleItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/DoubleItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/Doubling.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/Doubling.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/Factorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/Factorio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/Greet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/Greet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/IncrementElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/IncrementElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/PrintAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/PrintAll.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/Reverse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/Reverse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/SubInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/SubInt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/Sum.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/Sum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/SumElements.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/SumElements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/SwapElements.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/SwapElements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/Third.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/Third.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week-02/day-04/src/CenterBoxFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-04/src/CenterBoxFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week-02/day-04/src/LineInTheMiddle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-04/src/LineInTheMiddle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week-02/day-04/src/LinePlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-04/src/LinePlay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week-02/day-04/src/PositionSquare.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-04/src/PositionSquare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../week-02/day-04/src/PurpleSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-04/src/PurpleSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/day-01.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/homework/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/post_it/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/post_it/Post_It.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1ZI9p1zXvwuA5fGUkbBn91bGkUq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="77c8e079-3e7f-4ad1-a294-94ad9388003a" name="Default Changelist" comment="" />
+      <created>1584515921060</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584515921060</updated>
+      <workItem from="1584515927360" duration="30000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="374" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1584515931024">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="374" y="284" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1584515931024" />
+  </component>
+</project>
