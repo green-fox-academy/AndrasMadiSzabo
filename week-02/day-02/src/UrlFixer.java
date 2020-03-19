@@ -13,8 +13,9 @@ public class UrlFixer {
     public static void main(String[] args) {
         String url = "https//www.reddit.com/r/nevertellmethebots";
 
-        //url = url.replace("bots", "odds"); url = url.replace("s/", "s:/");
-        //url = url.replaceFirst("bots", "odds"); url = url.replaceFirst("s/", "s:/");
+        url = url.replace("bots", "odds"); url = url.replace("s/", "s:/");
+
+        url = url.replaceFirst("bots", "odds"); url = url.replaceFirst("s/", "s:/");
 
         System.out.println(url);
 

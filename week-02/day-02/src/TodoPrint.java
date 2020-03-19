@@ -17,6 +17,7 @@ public class TodoPrint {
         myTodo = myTodo.concat(todoText);
         myTodo = myTodo.concat(" - Download games\n");
         myTodo = myTodo.concat("\t - Diablo");
+
         System.out.println(myTodo);
 
         myTodo = "My todo:\n";

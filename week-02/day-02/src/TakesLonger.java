@@ -10,6 +10,7 @@ public class TakesLonger {
                 "into account Hofstadter's Law.");
         newQuote.insert(20, "always takes longer than");
 
+
         System.out.println(newQuote);
     }
 }

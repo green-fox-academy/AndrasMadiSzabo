@@ -7,6 +7,8 @@ public class List2 {
         // Create a list ('List A') which contains the following values
         //Apple, Avocado, Blueberries, Durian, Lychee
         ArrayList<String> listA = new ArrayList<>(Arrays.asList("Apple", "Avocado", "Blueberries", "Durian", "Lychee"));
+        listA.add("Eper");
+        listA.add("Alma");
 
         // Create a new list ('List B') with the values of List A
         ArrayList<String> listB = new ArrayList<>();
@@ -41,6 +43,10 @@ public class List2 {
 
         // Print out the 3rd element from List A
         System.out.println(listA.get(2));
+        for (String i : listA ) {
+            System.out.println(i);
+        }
+
 
 
 

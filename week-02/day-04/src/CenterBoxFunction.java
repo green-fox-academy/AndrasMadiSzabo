@@ -6,7 +6,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class CenterBoxFunction {
 
-    public static void mainDraw(Graphics graphics){
+    public static void mainDraw(Graphics graphics) {
         // create a function that draws one square and takes 2 parameters:
         // the square size and the graphics
         // and draws a square of that size to the center of the canvas.
@@ -15,15 +15,15 @@ public class CenterBoxFunction {
 
         for (int i = 0; i < 3; i++) {
 
-            int size = (int) (Math.random()*WIDTH);
+            int size = (int) (Math.random() * WIDTH);
             drawSquare(size, graphics);
         }
 
     }
 
-    public static void drawSquare (int size, Graphics graphics) {
+    public static void drawSquare(int size, Graphics graphics) {
         graphics.setColor(new Color(0));
-        graphics.drawRect(WIDTH/2-size/2, HEIGHT/2-size/2, size, size);
+        graphics.drawRect(WIDTH / 2 - size / 2, HEIGHT / 2 - size / 2, size, size);
     }
 
     // Don't touch the code below

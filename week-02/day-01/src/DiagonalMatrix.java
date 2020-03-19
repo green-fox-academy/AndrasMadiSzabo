@@ -21,12 +21,14 @@ public class DiagonalMatrix {
                     matrix[i][j] = 1;
                 } else {
                     matrix[i][j] = 0;
-                };
+                }
+                ;
                 System.out.print(matrix[i][j]);
             }
-           System.out.println();
+            System.out.println();
         }
-        for (int [] row : matrix) {
+
+        for (int[] row : matrix) {
             System.out.println(Arrays.toString(row));
         }
     }
