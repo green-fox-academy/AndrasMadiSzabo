@@ -26,6 +26,11 @@ public class Animal {
         thirst ++;
     }
 
+//    @Override
+//    public String toString() {
+//        return "Animal's thirst is " + this.thirst + "\n"  + "Animals hunger is " + this.hunger;
+//    }
+
 }
 
 
