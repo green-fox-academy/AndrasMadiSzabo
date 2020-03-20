@@ -1,84 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77c8e079-3e7f-4ad1-a294-94ad9388003a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../day-01/day-01.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day-01/src/HomeWork.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day-01/src/stablestudents/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day-01/src/stablestudents/StableStudents.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/AppendA.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/AppendA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/ChangeElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/ChangeElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/Colors.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/Colors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/CompareLength.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/CompareLength.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/DiagonalMatrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/DiagonalMatrix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/DoubleItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/DoubleItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/Doubling.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/Doubling.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/Factorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/Factorio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/Greet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/Greet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/IncrementElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/IncrementElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/PrintAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/PrintAll.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/Reverse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/Reverse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/SubInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/SubInt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/Sum.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/Sum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/SumElements.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/SumElements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/SwapElements.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/SwapElements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week-02/day-01/src/Third.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-01/src/Third.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week-02/day-04/src/CenterBoxFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-04/src/CenterBoxFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week-02/day-04/src/LineInTheMiddle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-04/src/LineInTheMiddle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week-02/day-04/src/LinePlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-04/src/LinePlay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week-02/day-04/src/PositionSquare.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-04/src/PositionSquare.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week-02/day-04/src/PurpleSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week-02/day-04/src/PurpleSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/day-01.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/homework/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/post_it/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/post_it/Post_It.java" beforeDir="false" />
+    <list default="true" id="ba8c3ec5-ef26-4815-b8b9-5d8bc486edb4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day-04/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day-04/.idea/day-04.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day-04/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day-04/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day-04/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day-04/day-04.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day-04/src/Apple.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day-04/test/AppleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/week-03.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day-02-03/src/fleetofthings/Thing.java" beforeDir="false" afterPath="$PROJECT_DIR$/day-02-03/src/fleetofthings/Thing.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JUnit4 Test Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1ZI9p1zXvwuA5fGUkbBn91bGkUq" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1ZLDEgy8gZgSINFObpbKPIUjER8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/day-04" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="AppleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="day-04" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AppleTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AppleTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="77c8e079-3e7f-4ad1-a294-94ad9388003a" name="Default Changelist" comment="" />
-      <created>1584515921060</created>
+      <changelist id="ba8c3ec5-ef26-4815-b8b9-5d8bc486edb4" name="Default Changelist" comment="" />
+      <created>1584609370662</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1584515921060</updated>
-      <workItem from="1584515927360" duration="30000" />
+      <updated>1584609370662</updated>
+      <workItem from="1584609380412" duration="4978000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="374" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1584515931024">
+    <state width="1388" height="232" key="GridCell.Tab.0.bottom" timestamp="1584682922977">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="374" y="284" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1584515931024" />
+    <state width="1388" height="232" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1584682922977" />
+    <state width="1388" height="232" key="GridCell.Tab.0.center" timestamp="1584682922976">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1388" height="232" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1584682922976" />
+    <state width="1388" height="232" key="GridCell.Tab.0.left" timestamp="1584682922975">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1388" height="232" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1584682922975" />
+    <state width="1388" height="232" key="GridCell.Tab.0.right" timestamp="1584682922976">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1388" height="232" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1584682922976" />
+    <state x="80" y="0" key="SettingsEditor" timestamp="1584621102200">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="80" y="0" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1584621102200" />
+    <state x="337" y="337" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1584645288395">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="337" y="337" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1440.900@0.0.1440.900" timestamp="1584645288395" />
+    <state x="496" y="144" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1584622790692">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="496" y="144" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1440.900@0.0.1440.900" timestamp="1584622790692" />
+    <state x="301" y="0" width="838" height="1032" key="search.everywhere.popup" timestamp="1584646972686">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="301" y="0" width="838" height="1032" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1584646972686" />
   </component>
 </project>
