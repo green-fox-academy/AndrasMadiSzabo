@@ -5,7 +5,7 @@ public class Pirate {
     private boolean isDead;
     private boolean passOut;
     private boolean isCaptain;
-    int nrOfDrinks;
+    private int nrOfDrinks;
 
     public Pirate() {
     }
@@ -55,21 +55,35 @@ public class Pirate {
         isCaptain = captain;
     }
 
+    public int getNrOfDrinks() {
+        return nrOfDrinks;
+    }
+
     public void brawl(Pirate pirate2) {
         // check if they are alive or passed out
-
-        int chance = (int) Math.floor(Math.random() * 3);
-        if (chance == 0) {
-            this.die();
-            System.out.println("This piarate died.");;
-        } else if (chance == 1) {
-            pirate2.die();
-            System.out.println("The other pirate died.");;
-        } else {
-            this.setPassOut(true);
-            pirate2.setPassOut(true);
-            System.out.println("Both pirates passed out.");
+        if (!isDead() && !isPassOut()) {
+            int chance = (int) Math.floor(Math.random() * 3);
+            if (chance == 0) {
+                this.die();
+                System.out.println("This pirate died.");;
+            } else if (chance == 1) {
+                pirate2.die();
+                System.out.println("The other pirate died.");;
+            } else {
+                this.setPassOut(true);
+                pirate2.setPassOut(true);
+                System.out.println("Both pirates passed out.");
+            }
         }
     }
 
+    @Override
+    public String toString() {
+        return "Pirate{" +
+                "isDead=" + isDead +
+                ", passOut=" + passOut +
+                ", isCaptain=" + isCaptain +
+                ", nrOfDrinks=" + nrOfDrinks +
+                '}';
+    }
 }

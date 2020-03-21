@@ -5,9 +5,6 @@ import java.util.ArrayList;
 public class Ship {
 
     private ArrayList<Pirate> ship;
-    private ArrayList<Pirate> otherShip;
-    public Pirate pirate;
-    public Pirate captain;
 
     public Ship () {
         this.ship = new ArrayList<>();
@@ -17,32 +14,28 @@ public class Ship {
         return ship;
     }
 
-    public ArrayList<Pirate> getOtherShip() {
-        return otherShip;
-    }
-
-    public Pirate getPirate() {
-        return pirate;
-    }
-
-    public Pirate getCaptain() {
-        return captain;
-    }
-
     public void fillShip () {
         int nrOfPiratesInShip = (int) Math.floor(Math.random()*10+1);
         for (int i = 1; i <= nrOfPiratesInShip; i++) {
+            Pirate pirate = new Pirate();
             if (i==1) {
-                this.getShip().add(this.getCaptain());
+                pirate.setCaptain(true);
+                this.getShip().add(pirate);
             } else {
-                this.getShip().add(this.getPirate());
+                this.getShip().add(pirate);
             }
         }
     }
+    // something is wrong here:
+    // 1 captain and 1 pirate on board even if ship.getShip().size() == 1 ?!?
 
-    public String battle (ArrayList<Pirate> otherShip) {
-
-        return "valami";
+    public void battle( ) {
+        getShip().get(0).howsItGoingMate();
+//        this.getShip().forEach(getPirate().brawl(this.getPirate()));
+//        pirate.brawl(pirate);
+//        int score = this.getPirate().getNrOfDrinks();
+//        int score = this.getPirate().getNrOfDrinks();
+//        System.out.println("nrOfDrinks " + score);
     }
 
 
