@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Test {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
         ArrayList<Person> people = new ArrayList<>();
 
         Person mark = new Person("Mark", 46, "male");
@@ -45,5 +45,30 @@ public class Test {
         awesome.addMentor(mentor);
         awesome.addMentor(gandhi);
         awesome.info();
+
+
+
+        Student student1 = new Student("John",20, "male", "BME");
+      //  student1.introduce();
+        try {
+            Student johnTheClone = (Student) student1.clone();
+            johnTheClone.name = "JohnTheClone";
+            johnTheClone.skipDays(5);
+            johnTheClone.introduce();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+
+        Gnirts gnirts = new Gnirts("this example");
+        System.out.println("gnirts length = " + gnirts.length());
+        System.out.println("gnirts char at index 2 = " + gnirts.charAt(2));
+        System.out.println("gnirts char subSequence 2-8 = " + gnirts.subSequence(2,7));
+        System.out.println("gnirts chars = " + gnirts.chars());
+        System.out.println("gnirts code points = " + gnirts.codePoints());
+
+
+
     }
+
+
 }

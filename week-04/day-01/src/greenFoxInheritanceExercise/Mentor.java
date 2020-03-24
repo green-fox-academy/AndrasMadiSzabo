@@ -9,8 +9,8 @@ public class Mentor extends Person {
     }
 
     public Mentor () {
-        super("Jane Doe", 30, "female");
-        level = "intermediate";
+        super();
+        this.level = "intermediate";
     }
 
     public void getGoal() {

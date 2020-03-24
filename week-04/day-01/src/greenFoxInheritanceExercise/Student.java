@@ -1,12 +1,15 @@
 package greenFoxInheritanceExercise;
 
-public class Student extends Person {
+import jdk.internal.HotSpotIntrinsicCandidate;
+
+public class Student extends Person implements Cloneable {
     private String previousOrganization;
     private int skippedDays;
 
     public Student(String name, int age, String gender, String previousOrganization) {
         super(name, age, gender);
         this.previousOrganization = previousOrganization;
+        this.skippedDays = 0;
     }
 
     public Student () {
@@ -27,6 +30,17 @@ public class Student extends Person {
     public void skipDays(int numberOfDays) {
         skippedDays += numberOfDays;
     }
+
+
+
+    @Override
+    public Object clone()throws CloneNotSupportedException{
+        return (Student) super.clone();
+    }
+
+//    protected Student clone() {
+//        return new Student();
+//    }
 
 
 
