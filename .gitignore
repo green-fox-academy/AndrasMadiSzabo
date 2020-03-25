@@ -1,3 +1,11 @@
+# provided by Greenfox
+	.idea
+	out
+	*.iml
+	*.xml
+	# as I have a mac
+  .DS_Store
+
 # Compiled class file
 *.class
 
