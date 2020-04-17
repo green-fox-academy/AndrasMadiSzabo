@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>My WebShop</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<body>
+
+<header class="webshop-header">
+    <h1>Andras's Shop</h1>
+</header>
+
+<div class="ui-menu">
+    <input type="button" class="ui-button" value="Only Available">
+    <input type="button" class="ui-button" value="Cheapest First">
+    <input type="button" class="ui-button" value="Contains Nike">
+    <input type="button" class="ui-button" value="Average Stock">
+    <input type="button" class="ui-button" value="Most Expensive Available">
+</div>
+
+<div class="search-row">
+    <label for="search">Search for ...</label><br>
+    <input type="search" id="search">
+    <input type="button" id="search-button" value="Search">
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th  class="tableText">Name</th>
+        <th  class="tableText">Description</th>
+        <th>Price</th>
+        <th>Stock quantity</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item : ${items}">
+        <td th:text="${item.getName()}" class="tableText"></td>
+        <td th:text="${item.getDescription()}" class="tableText"></td>
+        <td th:text="${item.getPrice()}" class="tableNumber"></td>
+        <td th:text="${item.getQuantity()}" class="tableNumber"></td>
+    </tr>
+    </tbody>
+
+</table>
+
+</body>
+</html>
