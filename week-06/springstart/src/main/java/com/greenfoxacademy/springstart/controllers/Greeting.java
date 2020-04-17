@@ -5,10 +5,12 @@ public class Greeting {
   //private long id=32;
   private String content;
   private long greetCount;
+  private String name;
 
   public Greeting(long greetCount, String content) {
     this.greetCount = greetCount;
     this.content = content;
+    this.name="A";
   }
 
 //  public long getId() {
@@ -21,6 +23,10 @@ public class Greeting {
 
   public long getGreetCount() {
     return greetCount;
+  }
+
+  public String getName() {
+    return name;
   }
 }
 

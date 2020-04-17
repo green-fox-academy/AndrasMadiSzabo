@@ -12,6 +12,11 @@ public class HelloRESTController {
 
   private AtomicLong greetCounter = new AtomicLong();
 
+  @RequestMapping(value = "/greeting", method = RequestMethod.GET)
+  public Greeting greeting(@RequestParam String name){
+   return new Greeting(greetCounter.addAndGet(1), "Hello " + name);
+  }
+
   //  @RequestMapping(value = "/greeting", method = RequestMethod.GET)
 //  public Greeting greeting(){
 //    return new Greeting(1, "Hello");
@@ -21,10 +26,5 @@ public class HelloRESTController {
 //  public Greeting greeting(@RequestParam String name){
 //    return new Greeting(1, "Hello " + name);
 //  }
-
-  @RequestMapping(value = "/greeting", method = RequestMethod.GET)
-  public Greeting greeting(@RequestParam String name){
-   return new Greeting(greetCounter.addAndGet(1), "Hello " + name);
-  }
 
 }

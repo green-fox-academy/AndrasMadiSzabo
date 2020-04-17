@@ -1,6 +1,8 @@
 package exercises;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
 
 public class Exercise6 {
   //Write a Stream Expression to find the uppercase characters in a string!
@@ -9,19 +11,38 @@ public class Exercise6 {
 
     String string = "Write a Stream Expression to find the uppercase characters in a string!";
 
-    String isUpper = string
+    // This doesn't work ----------- !!!!!!!!!!!!!!!!!!
+
+    //String isUpper =
+    string
         .chars()
         .filter(Character::isUpperCase)
-        .toString();
+        .forEach(System.out::println);
+    //.toString();
+
+    String isUpper =
+        string
+            .chars()
+            .filter(Character::isUpperCase)
+            .toString();
 
     System.out.println(isUpper);
 
-//    Arrays.stream(string.split("."))
-//        .filter(x->Character.isUpperCase(Integer.parseInt(x)))
-//        .forEach(System.out::println);
+// These ones work -----------
+  // ref:
+    // https://www.baeldung.com/java-string-to-stream
+    // https://stackoverflow.com/questions/22435833/why-is-string-chars-a-stream-of-ints-in-java-8
 
-    string.chars()
+    string
+        .chars()
         .mapToObj(c -> (char) c)
+        .filter(Character::isUpperCase)
+        .forEach(System.out::println);
+
+
+    string
+        .codePoints()
+        .mapToObj(c->(char)c)
         .filter(Character::isUpperCase)
         .forEach(System.out::println);
 

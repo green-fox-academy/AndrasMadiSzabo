@@ -1,45 +1,33 @@
 package com.greenfoxacademy.springstart.controllers;
 
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.Arrays;
+import java.util.Random;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class HelloWebController {
 
-  private AtomicLong greetCounter = new AtomicLong();
+  String[] hellos = {"Mirëdita", "Ahalan", "Parev", "Zdravei", "Nei Ho", "Dobrý den", "Ahoj", "Goddag", "Goede dag, Hallo", "Hello", "Saluton", "Hei", "Bonjour",
+      "Guten Tag", "Gia'sou", "Aloha", "Shalom", "Namaste", "Namaste", "Jó napot", "Halló", "Helló", "Góðan daginn", "Halo", "Aksunai", "Qanuipit", "Dia dhuit",
+      "Salve", "Ciao", "Kon-nichiwa", "An-nyong Ha-se-yo", "Salvëte", "Ni hao", "Dzien' dobry", "Olá", "Bunã ziua", "Zdravstvuyte", "Hola", "Jambo", "Hujambo", "Hej",
+      "Sa-wat-dee", "Merhaba", "Selam", "Vitayu", "Xin chào", "Hylo", "Sut Mae", "Sholem Aleychem", "Sawubona"};
 
-  @RequestMapping(value = "/web/greeting", method = RequestMethod.GET)
-//  public String greeting(Model model) {
-//    model.addAttribute("name", " World");
-//    model.addAttribute("greetCounter", greetCounter.addAndGet(1));
-//    return "greeting";
-//  }
+  @GetMapping(value = "/web/webgreeting")
 
   public String greeting(Model model) {
-    model.addAttribute("name", " World");
-    greetCounter.addAndGet(1);
-    if (greetCounter.get() % 3 == 0 && greetCounter.get() % 5 == 0 && greetCounter.get() % 7 == 0) {
-      model.addAttribute("greetCounter", "Fizz-Buzz-Woof");
-    } else if (greetCounter.get() % 3 == 0 && greetCounter.get() % 5 == 0) {
-      model.addAttribute("greetCounter", "Fizz-Buzz");
-    } else if (greetCounter.get() % 3 == 0 && greetCounter.get() % 7 == 0) {
-      model.addAttribute("greetCounter", "Fizz-Woof");
-    } else if (greetCounter.get() % 5 == 0 && greetCounter.get() % 7 == 0) {
-      model.addAttribute("greetCounter", "Buzz-Woof");
-    } else if (greetCounter.get() % 3 == 0) {
-      model.addAttribute("greetCounter", "Fizz");
-      model.addAttribute("color", "color: rgb(120, 200, 10)");
-    } else if (greetCounter.get() % 5 == 0) {
-      model.addAttribute("greetCounter", "Buzz");
-    } else if (greetCounter.get() % 7 == 0) {
-      model.addAttribute("greetCounter", "Woof");
-    } else {
-      model.addAttribute("greetCounter", greetCounter.get());
-    }
-     model.addAttribute("font-size", "font-size: 24px");
-    return "greeting";
+    model.addAttribute("name", toString());
+
+    return "webgreeting";
+  }
+
+  @Override
+  public String toString() {
+    Random random = new Random();
+    Integer randomName = random.nextInt(hellos.length);
+    return  hellos[randomName].toString();
   }
 }
