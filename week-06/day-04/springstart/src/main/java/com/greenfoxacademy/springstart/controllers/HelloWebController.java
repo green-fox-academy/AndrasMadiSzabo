@@ -16,18 +16,25 @@ public class HelloWebController {
       "Salve", "Ciao", "Kon-nichiwa", "An-nyong Ha-se-yo", "Salvëte", "Ni hao", "Dzien' dobry", "Olá", "Bunã ziua", "Zdravstvuyte", "Hola", "Jambo", "Hujambo", "Hej",
       "Sa-wat-dee", "Merhaba", "Selam", "Vitayu", "Xin chào", "Hylo", "Sut Mae", "Sholem Aleychem", "Sawubona"};
 
-  @GetMapping(value = "/web/webgreeting")
+  @GetMapping(value = "/web/webhello")
 
-  public String greeting(Model model) {
-    model.addAttribute("name", toString());
+  public String whateverWeCallThis(Model model) {
+    model.addAttribute("greeting", actualHello());
 
     return "webgreeting";
   }
 
+  public String actualHello(){
+    Random random = new Random();
+    int randomName = random.nextInt(hellos.length);
+    return hellos[randomName];
+  }
+
+  // I don't even need this. Just leave it in for the point.
   @Override
   public String toString() {
     Random random = new Random();
-    Integer randomName = random.nextInt(hellos.length);
-    return  hellos[randomName].toString();
+    int randomName = random.nextInt(hellos.length);
+    return hellos[randomName];
   }
 }

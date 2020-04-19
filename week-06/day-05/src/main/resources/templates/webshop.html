@@ -13,11 +13,11 @@
 </header>
 
 <div class="ui-menu">
-    <input type="button" class="ui-button" value="Only Available">
-    <input type="button" class="ui-button" value="Cheapest First">
-    <input type="button" class="ui-button" value="Contains Nike">
-    <input type="button" class="ui-button" value="Average Stock">
-    <input type="button" class="ui-button" value="Most Expensive Available">
+    <button type="button" class="ui-button" onclick="location.href='onlyavailable'">Only Available</button>
+    <button type="button" class="ui-button" onclick="location.href='cheapestfirst'">Cheapest First</button>
+    <button type="button" class="ui-button" onclick="location.href='containsnike'">Contains Nike</button>
+    <button type="button" class="ui-button" onclick="location.href='averagestock'">Average Stock</button>
+    <button type="button" class="ui-button" onclick="location.href='mostexpensiveavailable'">Most Expensive Available</button>
 </div>
 
 <div class="search-row">
@@ -35,13 +35,7 @@
         <th>Stock quantity</th>
     </tr>
     </thead>
-    <tbody>
-    <tr th:each="item : ${items}">
-        <td th:text="${item.getName()}" class="tableText"></td>
-        <td th:text="${item.getDescription()}" class="tableText"></td>
-        <td th:text="${item.getPrice()}" class="tableNumber"></td>
-        <td th:text="${item.getQuantity()}" class="tableNumber"></td>
-    </tr>
+<tbody th:replace="fragments/filtering :: all-items">
     </tbody>
 
 </table>

@@ -7,10 +7,14 @@ public class Greeting {
   private long greetCount;
   private String name;
 
-  public Greeting(long greetCount, String content) {
-    this.greetCount = greetCount;
-    this.content = content;
-    this.name="A";
+//  public Greeting(long greetCount, String content) {
+//    this.greetCount = greetCount;
+//    this.content = content;
+//    this.name="A";
+//  }
+
+  public Greeting(String name) {
+    this.name = name;
   }
 
 //  public long getId() {
