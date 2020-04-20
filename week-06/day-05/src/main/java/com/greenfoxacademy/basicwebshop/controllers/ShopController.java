@@ -20,24 +20,24 @@ public class ShopController {
   @GetMapping(value = "/onlyavailable")
   public String onlyAvailable(Model model){
     model.addAttribute("items", myShop.filterItems());
-    return "onlyavailable";
+    return "webshop";
   }
 
   @GetMapping(value = "/cheapestfirst")
   public String cheapest(Model model){
     model.addAttribute("items", myShop.cheapestFirst());
-    return "cheapestfirst";
+    return "webshop";
   }
 
   @GetMapping(value = "/containsnike")
   public String contains(Model model){
     model.addAttribute("items", myShop.containsNike());
-    return "containsnike";
+    return "webshop";
   }
 
   @GetMapping(value = "/averagestock")
   public String averagestock(Model model){
-    model.addAttribute("average", myShop.averagestock());
+    model.addAttribute("averageStock", myShop.averagestock());
     return "averagestock";
   }
 
@@ -47,10 +47,6 @@ public class ShopController {
     return "mostexpensiveavailable";
   }
 
-//  @Override
-//  public String toString() {
-//    return  myShop.averagestock();
-//  }
 
 //  ... as of 1st instruction so, I leave it here:
   //  @ResponseBody

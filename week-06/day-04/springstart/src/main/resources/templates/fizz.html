@@ -6,8 +6,10 @@
 </head>
 <body>
 <p th:text="'Hello, ' + ${name} + '!' + ' This site was loaded ' + ${greetCounter} + ' time(s) since last server start.'"
-   th:style="${size}"
-   th:styleappend="${color}"
+   th:style="${color}"
+   th:styleappend="${font-size}"
 ></p>
 </body>
 </html>
+
+<!--+ ';'-->

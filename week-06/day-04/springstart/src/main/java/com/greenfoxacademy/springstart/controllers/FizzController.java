@@ -24,17 +24,22 @@ public class FizzController {
       model.addAttribute("greetCounter", "Fizz-Woof");
     } else if (greetCounter.get() % 5 == 0 && greetCounter.get() % 7 == 0) {
       model.addAttribute("greetCounter", "Buzz-Woof");
+
+//  -------------------------------- *** --------------------------------
     } else if (greetCounter.get() % 3 == 0) {
-      model.addAttribute("size", "font-size: 24px");
       model.addAttribute("greetCounter", "Fizz");
       model.addAttribute("color", "color: rgb(120, 200, 10)");
+      model.addAttribute("font-size", "font-size: 24px");
+//  -------------------------------- *** --------------------------------
+
+
     } else if (greetCounter.get() % 5 == 0) {
       model.addAttribute("greetCounter", "Buzz");
-      model.addAttribute("size", "font-size: 44px");
+      //model.addAttribute("size", "font-size: 44px");
       model.addAttribute("color", "color: rgb(120, 200, 10)");
     } else if (greetCounter.get() % 7 == 0) {
       model.addAttribute("greetCounter", "Woof");
-      model.addAttribute("size", "font-size: 64px");
+      //model.addAttribute("size", "font-size: 64px");
       model.addAttribute("color", "color: rgb(120, 200, 10)");
     } else {
       model.addAttribute("greetCounter", greetCounter.get());

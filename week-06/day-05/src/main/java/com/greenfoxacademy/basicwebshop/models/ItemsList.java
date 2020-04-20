@@ -61,6 +61,4 @@ public class ItemsList {
         .get().getName();
   }
 
-
-
 }
