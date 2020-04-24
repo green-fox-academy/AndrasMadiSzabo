@@ -22,9 +22,11 @@
 
 <div class="search-row">
     <label for="search">Search for ...</label><br>
-    <input type="search" id="search">
-    <input type="button" id="search-button" value="Search">
+    <input type="search" id="search"  placeholder="Search for something" autocomplete="on">
+    <input type="button" id="search-button" value="Search" onclick="location.href='search'">
 </div>
+
+
 
 <table th:replace="fragments/filtering :: all-items">
     <!--    <thead>-->

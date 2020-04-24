@@ -13,4 +13,19 @@ public class BlogPost {
         this.publicationDate = publicationDate;
     }
 
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public String getPublicationDate() {
+        return publicationDate;
+    }
 }

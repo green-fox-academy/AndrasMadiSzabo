@@ -63,8 +63,16 @@ public class Test {
         System.out.println("gnirts length = " + gnirts.length());
         System.out.println("gnirts char at index 2 = " + gnirts.charAt(2));
         System.out.println("gnirts char subSequence 2-8 = " + gnirts.subSequence(2,7));
-        System.out.println("gnirts chars = " + gnirts.chars());
-        System.out.println("gnirts code points = " + gnirts.codePoints());
+//        System.out.println("gnirts chars = " + gnirts.chars());
+//        System.out.println("gnirts code points = " + gnirts.codePoints());
+
+        Gnirts g = new Gnirts("example");
+        System.out.println(g.charAt(1));
+        // should print out: l
+
+        Shifter s = new Shifter("example", 2);
+        System.out.println(s.charAt(0));
+        // should print out: a
 
 
 

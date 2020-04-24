@@ -22,7 +22,6 @@ public class DiagonalMatrix {
                 } else {
                     matrix[i][j] = 0;
                 }
-                ;
                 System.out.print(matrix[i][j]);
             }
             System.out.println();

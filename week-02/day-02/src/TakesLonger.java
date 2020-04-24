@@ -6,8 +6,7 @@ public class TakesLonger {
         // Add "always takes longer than" to the StringBuilder (quote) between the words "It" and "you"
         // Using pieces of the quote variable (instead of just redefining the string)
 
-        StringBuilder newQuote = new StringBuilder("Hofstadter's Law: It you expect, even when you take " +
-                "into account Hofstadter's Law.");
+        StringBuilder newQuote = new StringBuilder("Hofstadter's Law: It you expect, even when you take into account Hofstadter's Law.");
         newQuote.insert(20, "always takes longer than");
 
 

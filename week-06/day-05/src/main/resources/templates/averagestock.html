@@ -17,14 +17,23 @@
     <button type="button" class="ui-button" onclick="location.href='cheapestfirst'">Cheapest First</button>
     <button type="button" class="ui-button" onclick="location.href='containsnike'">Contains Nike</button>
     <button type="button" class="ui-button" onclick="location.href='#'">Average Stock</button>
-    <button type="button" class="ui-button" onclick="location.href='mostexpensiveavailable'">Most Expensive Available</button>
+    <button type="button" class="ui-button" onclick="location.href='mostexpensiveavailable'">Most Expensive Available
+    </button>
 </div>
 
-<div class="search-row">
+<form action="/search" method="post">
     <label for="search">Search for ...</label><br>
-    <input type="search" id="search">
-    <input type="button" id="search-button" value="Search">
-</div>
+    <input type="search" name="searchTerm" id="search" placeholder="Search here ...">
+    <a href="/search" >
+        <button id="search-button">Search now</button>
+    </a>
+</form>
+
+<!--<div class="search-row">-->
+<!--    <label for="search">Search for ...</label><br>-->
+<!--    <input type="search" id="search">-->
+<!--    <input type="button" id="search-button" value="Search">-->
+<!--</div>-->
 
 <h1 th:text="'Average stock: ' + ${averageStock} + ' pieces.'" class="tableText"></h1>
 

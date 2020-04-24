@@ -1,10 +1,12 @@
 package com.greenfoxacademy.basicwebshop.models;
 
+import com.greenfoxacademy.basicwebshop.controllers.ShopController;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.OptionalDouble;
 import java.util.stream.Collectors;
+import org.springframework.web.bind.annotation.RequestParam;
 
 public class ItemsList {
 
@@ -60,5 +62,10 @@ public class ItemsList {
         .max(Comparator.comparingDouble(ShopItem::getPrice))
         .get().getName();
   }
+
+//  public String search() {
+//    return myItems.stream()
+//        .filter(shopItem -> shopItem.getName().toLowerCase().contains()
+//  }
 
 }

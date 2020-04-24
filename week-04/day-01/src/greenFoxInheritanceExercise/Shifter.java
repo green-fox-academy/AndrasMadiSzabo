@@ -13,12 +13,12 @@ public class Shifter implements CharSequence {
 
     @Override
     public int length() {
-        return 0;
+        return this.string.length();
     }
 
     @Override
     public char charAt(int index) {
-        return 0;
+        return this.string.charAt(index+number);
     }
 
     @Override

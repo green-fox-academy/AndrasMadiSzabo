@@ -13,7 +13,6 @@ public class Apple {
     //Fix the returned value to make the test succeeding again
 
     public String getApple() {
-        String string = "apple";
-        return string;
+        return "apple";
     }
 }
