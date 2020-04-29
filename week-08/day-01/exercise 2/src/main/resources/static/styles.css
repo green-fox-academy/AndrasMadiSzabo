@@ -1,0 +1,15 @@
+h1 {
+    text-transform: uppercase;
+}
+
+td {
+    border: #5c5c5c double 1px;
+}
+
+body {
+    background-color: lightskyblue;
+}
+
+.cell {
+    border: #5c5c5c double 1px;
+}
