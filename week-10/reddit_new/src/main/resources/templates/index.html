@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Posts</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/style.css}" />
+</head>
+<body>
+
+<h1>Trending posts</h1>
+
+<table class="table table-hover">
+    <tr th:each="post : ${posts}" th:object="${post}" >
+        <td th:text="*{counter}" ></td>
+        <td><a th:href="@{|/change-like-counter/*{id}/+|}">+</a> </td>
+        <td><a th:href="@{|/change-like-counter/*{id}/-|}">-</a> </td>
+        <td ><a th:href="*{url}" th:text="*{title}"></a></td>
+        <td th:text="*{postUser != null} ? *{postUser.userName} : 'No user'"></td>
+    </tr>
+</table>
+
+</body>
+</html>
+
+<!--  we can build it as a string like: <a th:href="'change-like-counter/' + *{id} + '/+'"> -->
+<!-- <html xmlns:th="http://www.thymeleaf.org"> -->
+
+<!-- implementation 'org.springframework.boot:spring-boot-starter-data-jpa'-->
+
+

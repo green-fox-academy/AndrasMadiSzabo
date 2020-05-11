@@ -58,14 +58,16 @@ public class ItemsList {
 
   public String mostexpensiveavailable() {
     return myItems.stream()
-        .filter(shopItem -> shopItem.getQuantity()!=0)
+        .filter(shopItem -> shopItem.getQuantity() != 0)
         .max(Comparator.comparingDouble(ShopItem::getPrice))
         .get().getName();
   }
 
-//  public String search() {
-//    return myItems.stream()
-//        .filter(shopItem -> shopItem.getName().toLowerCase().contains()
-//  }
+  public List<ShopItem> search(String searchItem) {
+
+    return myItems.stream()
+        .filter(shopItem -> shopItem.getName().toLowerCase().contains(searchItem.toLowerCase()))
+        .collect(Collectors.toList());
+  }
 
 }

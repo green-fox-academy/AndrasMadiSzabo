@@ -1,6 +1,7 @@
 <table th:fragment="all-items" xmlns:th="http://www.w3.org/1999/xhtml">
     <thead>
     <tr>
+        <th>Item Nr</th>
         <th class="tableText">Name</th>
         <th class="tableText">Description</th>
         <th>Price</th>
@@ -9,6 +10,7 @@
     </thead>
     <tbody>
     <tr th:each="item : ${items}">
+        <td th:text="${item.getId()}" class="tableNumber"></td>
         <td th:text="${item.getName()}" class="tableText"></td>
         <td th:text="${item.getDescription()}" class="tableText"></td>
         <td th:text="${item.getPrice()}" class="tableNumber"></td>
@@ -22,7 +24,29 @@
 </div>
 
 <div th:fragment="mostexpensiveavailableView" xmlns:th="http://www.w3.org/1999/xhtml">
-    <h1 th:text="'The most expensive item is ' + ${mostexpensiveavailable}" class="tableText"></h1>
+    <h1 th:text="'The most expensive item is ' + ${name}" class="tableText"></h1>
+</div>
+
+<div th:fragment="searchView" xmlns:th="http://www.w3.org/1999/xhtml">
+    <h1 th:text="'The searched item is '" class="tableText"></h1>
+    <thead>
+    <tr>
+        <th>Item Nr</th>
+        <th class="tableText">Name</th>
+        <th class="tableText">Description</th>
+        <th>Price</th>
+        <th>Stock quantity</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item : ${searchResult}">
+        <td th:text="${item.getId()}" class="tableNumber"></td>
+        <td th:text="${item.getName()}" class="tableText"></td>
+        <td th:text="${item.getDescription()}" class="tableText"></td>
+        <td th:text="${item.getPrice()}" class="tableNumber"></td>
+        <td th:text="${item.getQuantity()}" class="tableNumber"></td>
+    </tr>
+    </tbody>
 </div>
 
 

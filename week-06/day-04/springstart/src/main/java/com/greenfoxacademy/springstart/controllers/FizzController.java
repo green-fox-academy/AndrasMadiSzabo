@@ -12,7 +12,6 @@ public class FizzController {
   private AtomicLong greetCounter = new AtomicLong();
 
   @RequestMapping(value = "/web/fizz", method = RequestMethod.GET)
-
   public String greeting(Model model) {
     model.addAttribute("name", " Visitor");
     greetCounter.addAndGet(1);

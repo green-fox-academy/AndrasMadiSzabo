@@ -3,51 +3,60 @@
 <head>
     <title>My WebShop</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles2.css">
 </head>
 <body>
 
-<header class="webshop-header">
-    <h1 onclick="location.href='webshop'">Andras's Shop</h1>
+<header>
+    <h1 class="logo"><a href="/webshop">MyShop</a></h1><br>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+<!--    <img src="assets/IMG_0896%20cropped.jpg" alt="My picture" class="logo">-->
+    <!--        <h1 onclick="location.href='webshop'">Shop</h1>-->
+    <nav class="ui-menu">
+        <ul>
+            <li class="ui-button"><a href="/nincs">Not Available</a></li>
+            <li class="ui-button"><a href="/cheapestfirst">Cheapest First</a></li>
+            <li class="ui-button"><a href="/containsnike">Contains Nike</a></li>
+            <li class="ui-button"><a href="/averagestock">Average Stock</a></li>
+            <li class="ui-button"><a href="mostexpensiveavailable">Most Expensive Available</a></li>
+        </ul>
+    </nav>
+    <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+    </label>
 </header>
 
-<div class="ui-menu">
-    <button type="button" class="ui-button" onclick="location.href='onlyavailable'">Not Available</button>
-    <button type="button" class="ui-button" onclick="location.href='cheapestfirst'">Cheapest First</button>
-    <button type="button" class="ui-button" onclick="location.href='containsnike'">Contains Nike</button>
-    <button type="button" class="ui-button" onclick="location.href='averagestock'">Average Stock</button>
-    <button type="button" class="ui-button" onclick="location.href='mostexpensiveavailable'">Most Expensive Available
-    </button>
+<div class="content">
+
+    <form action="/search" method="post" class="search-row">
+        <input type="text" id="search" name="searchInput" placeholder="... search for Nike">
+        <input type="submit" id="search-button" value="See list">
+    </form>
+
+<!--    <form action="#" th:action="@{/search}" th:object="${sh}"  method="post" class="search-row">-->
+<!--&lt;!&ndash;        <label for="search">Search for ...</label>&ndash;&gt;-->
+<!--        <input type="text" th:field="*{id}" id="search" placeholder="Search for something" autocomplete="on">-->
+<!--        <input type="submit" id="search-button" value="Search now">-->
+<!--    </form>-->
+
+    <div th:if="${items}">
+        <table th:replace="fragments/filtering :: all-items"></table>
+    </div>
+    <div th:if="${averageStock}">
+        <table th:replace="fragments/filtering :: averageStockView"></table>
+    </div>
+    <div th:if="${name}">
+        <table th:replace="fragments/filtering :: mostexpensiveavailableView"></table>
+    </div>
+    <div th:if="${searchResult}">
+        <table th:replace="fragments/filtering :: searchView"></table>
+    </div>
+
+<!--    <table th:if="${items}" th:replace="fragments/filtering :: all-items"></table>-->
+<!--    <div th:if="${averageStock}" th:replace="fragments/filtering :: averageStockView"></div>-->
+<!--    <div th:if="${name}" th:replace="fragments/filtering :: mostexpensiveavailableView"></div>-->
+
 </div>
-
-<div class="search-row">
-    <label for="search">Search for ...</label><br>
-    <input type="search" id="search"  placeholder="Search for something" autocomplete="on">
-    <input type="button" id="search-button" value="Search" onclick="location.href='search'">
-</div>
-
-
-
-<table th:replace="fragments/filtering :: all-items">
-    <!--    <thead>-->
-    <!--    <tr>-->
-    <!--        <th class="tableText">Name</th>-->
-    <!--        <th class="tableText">Description</th>-->
-    <!--        <th>Price</th>-->
-    <!--        <th>Stock quantity</th>-->
-    <!--    </tr>-->
-    <!--    </thead>-->
-    <!--    <tbody>-->
-    <!--    </tbody>-->
-</table>
-
-<!--<div>-->
-<!--<p th:replace="fragments/filtering :: averageStockView"></p>-->
-<!--</div>-->
-
-<!--<div>-->
-<!--<p th:replace="fragments/filtering :: mostexpensiveavailableView"></p>-->
-<!--</div>-->
 
 </body>
 </html>

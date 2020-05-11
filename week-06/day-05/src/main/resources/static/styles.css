@@ -15,11 +15,13 @@ body {
 
 header {
     color: blue;
+    background-color: lightskyblue;
     border-bottom: blue 2px solid;
 }
 
 .ui-menu {
     padding: 10px 0;
+
 }
 
 .ui-button {
@@ -27,9 +29,32 @@ header {
     font-weight: bold;
 
     color: #ffffff;
+
     background-color: #ea1d1d;
     padding: 5px 10px;
     border-radius: 10px;
+    width: 10em;
+}
+
+/* unvisited link */
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: white;
+}
+
+/* mouse over link */
+a:hover {
+    color: yellow;
+}
+
+/* selected link */
+a:active {
+    color: blue;
 }
 
 label {

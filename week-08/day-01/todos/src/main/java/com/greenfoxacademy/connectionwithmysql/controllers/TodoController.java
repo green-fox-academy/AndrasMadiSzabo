@@ -2,6 +2,7 @@ package com.greenfoxacademy.connectionwithmysql.controllers;
 
 import com.greenfoxacademy.connectionwithmysql.models.Todo;
 import com.greenfoxacademy.connectionwithmysql.repositories.TodoRepository;
+import com.greenfoxacademy.connectionwithmysql.services.TodoService;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,46 +16,41 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/todo")
 public class TodoController {
 
+  // Round 3 – filter active dealt with in TodoService
   @Autowired
-  private TodoRepository todoRepository;
-
-  private List<Todo> todoList = new ArrayList<>();
-
+  private TodoService todoService;
 
   @RequestMapping(value = {"/", "/list", ""}, method = RequestMethod.GET)
-  public String list(Model model) {
-    model.addAttribute("todos", todoRepository.findAll());
+  public String list(@RequestParam(name = "isActive", required = false) Boolean active, Model model) {
+      model.addAttribute("todos", todoService.isActive(active));
     return "todolist";
   }
 
-//  @RequestMapping(value = {"/", "/list", ""}, method = RequestMethod.POST)
-//  public String list(@RequestParam(name = "isActive", required = false) String active, Model model) {
-//    if (active.equals("true")) {
-//      List<Todo> activeList = null;
-//      for (Todo todo : todoRepository.findAll()) {
-//        if (!todo.isDone()){
-//          activeList.add(todo);
-//        }
-//      }
-//      model.addAttribute("todos", activeList);
-//      return "activeList";
-//    } else {
-//      model.addAttribute("todos", todoRepository.findAll());
+  // Round 1 – only list
+//  @Autowired
+//  private TodoRepository todoRepository;
+
+//  @RequestMapping(value = {"/", "/list", ""}, method = RequestMethod.GET)
+//  public String list(Model model) {
+//    model.addAttribute("todos", todoRepository.findAll());
 //    return "todolist";
-//    }
 //  }
 
-  @RequestMapping(value = {"/", "/list", ""}, method = RequestMethod.POST)
-  public String list(@RequestParam(name = "isActive", required = false) String active, Model model) {
-    List<Todo> activeList;
-    if(active != null){
-      activeList = filterTodosByActive(active);
-    }
-    return "todolist";
-  }
-
-  private List<Todo> filterTodosByActive(String active){
-    return (List<Todo>) todoRepository.findAll();
-  }
+// Round 2 – filter active
+//  @RequestMapping(value = {"/", "/list", ""}, method = RequestMethod.GET)
+//  public String list(@RequestParam(name = "isActive", required = false) Boolean active, Model model) {
+//    List<Todo> activeList;
+//    if(active != null){
+//      activeList = filterTodosByActive(!active);
+//      model.addAttribute("todos", activeList);
+//    } else {
+//      model.addAttribute("todos", todoRepository.findAll());
+//    }
+//    return "todolist";
+//  }
+//
+//  private List<Todo> filterTodosByActive(Boolean active){
+//    return todoRepository.findAllByDoneEquals(active);
+//  }
 
 }
