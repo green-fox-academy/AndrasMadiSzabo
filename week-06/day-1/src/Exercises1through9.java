@@ -100,7 +100,7 @@ public class Exercises1through9 {
    List<Character> characterList = Arrays.asList('S', 't', 'r', 'e', 'a', 'm');
 
    String myString = characterList.stream()
-       .map(character -> character.toString())
+       .map(Object::toString)
        .collect(Collectors.joining(""));
     System.out.println(myString);
 
