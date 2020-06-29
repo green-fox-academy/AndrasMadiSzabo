@@ -46,10 +46,6 @@ public class RestControllerAllBeforeUntil {
         HttpStatus.OK);
   }
 
-
-
-
-
   @GetMapping("/greeter")
   ResponseEntity<?> greater(
       @RequestParam(value = "name", required = false) String name,
@@ -72,12 +68,10 @@ public class RestControllerAllBeforeUntil {
         greeterService.greet(name, title), HttpStatus.OK);
   }
 
-  @PostMapping("/greeter")
-  public String addGreeting(@ModelAttribute(name = "greeting") Greeter greeter){
-
-  }
-
-
+//  @PostMapping("/greeter")
+//  public String addGreeting(@ModelAttribute(name = "greeting") Greeter greeter){
+//
+//  }
 
 
   @GetMapping("/appenda/{appendable}")
@@ -88,8 +82,5 @@ public class RestControllerAllBeforeUntil {
         new Append(appendable + "a"), HttpStatus.OK
     );
   }
-
-
-
 
 }

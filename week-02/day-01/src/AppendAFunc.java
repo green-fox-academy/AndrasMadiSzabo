@@ -1,5 +1,5 @@
 public class AppendAFunc {
-    //  Create the usual class wrapper
+  //  Create the usual class wrapper
 //  and main method on your own.
 
 // - Create a string variable named `typo` and assign the value `Chinchill` to it
@@ -8,13 +8,16 @@ public class AppendAFunc {
 //
 // - Print the result of `appendAFunc(typo)`
 
-    public static void main(String[] args) {
-        String typo = "Chinchill";
-        System.out.println(appendAFunc(typo));
+  public static void main(String[] args) {
+    String typo = "Chinchill";
+    System.out.println(appendAFunc(typo));
 
-    }
-        public static String appendAFunc(String a) {
-            return a + "a";
-        };
+  }
+
+  public static String appendAFunc(String a) {
+    return a + "a";
+  }
+
+  ;
 
 }

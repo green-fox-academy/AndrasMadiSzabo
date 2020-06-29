@@ -17,8 +17,8 @@ public class DrawPyramid {
         System.out.println("Number: ");
         int number = input.nextInt();
 
-        for (int i = 0; i < number+1; i++) {
-            for (int j = 0; j < number - i; j++) {
+        for (int i = 0; i < number; i++) {
+            for (int j = 0; j < number - i-1; j++) {
                 System.out.print(" ");
             }
             for (int j = 0; j < (i*2)+1; j++) {

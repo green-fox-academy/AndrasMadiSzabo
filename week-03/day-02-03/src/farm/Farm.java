@@ -20,7 +20,6 @@ public class Farm {
       listOfAnimals.add(animal);
       freeSlots--;
     }
-
   }
 
   public void slaughter() {

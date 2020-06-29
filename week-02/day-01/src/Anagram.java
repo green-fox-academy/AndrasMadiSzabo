@@ -1,9 +1,8 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Anagram {
   public static void main(String[] args) {
-    System.out.println(anagram("cica", "abci"));
+    System.out.println(anagram("cica", "acci"));
   }
 
   public static boolean anagram(String a, String b) {
@@ -14,11 +13,7 @@ public class Anagram {
       char[] bToChar = b.toCharArray();
       Arrays.sort(aToChar);
       Arrays.sort(bToChar);
-      if (Arrays.equals(aToChar, bToChar)) {
-        return true;
-      } else {
-        return false;
-      }
+      return Arrays.equals(aToChar, bToChar);
     }
   }
 }

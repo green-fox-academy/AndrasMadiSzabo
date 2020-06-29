@@ -11,4 +11,8 @@ public class Sharpie {
     public void use () {
         inkAmount --;
     }
+
+    public float getInkAmount() {
+        return inkAmount;
+    }
 }

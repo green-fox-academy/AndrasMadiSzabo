@@ -8,6 +8,8 @@ public class ShoppingList {
   }
 
   public static void check(ArrayList<String> list) {
-    System.out.println(list.contains("milk"));
+    System.out.println("Does list contain %s? " + list.contains("milk"));
+    System.out.println("Does list contain %s? " + list.contains("bananas"));
   }
+
 }

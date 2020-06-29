@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Add post</title>
+</head>
+<body>
+<h1>Submit nem post</h1>
+<form th:action="@{add-post}" th:method="post" th:object="${post}">
+    <label for="title">Title: </label>
+    <input id="title" type="text" th:field="*{title}">
+    <label for="url">URL: </label>
+    <input id="url" type="url" th:field="*{url}">
+    <select th:field="*{postUser}">
+        <option th:each="postUser : ${postUsers}" th:value="${postUser.id}" th:text="${postUser.userName}"></option>
+    </select>
+    <button type="submit">Submit</button>
+</form>
+<div th:if="${error!=null}">
+    <p th:text="${error.error}"></p>
+</div>
+</body>
+</html>
