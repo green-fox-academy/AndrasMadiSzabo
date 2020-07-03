@@ -41,20 +41,18 @@ public class SimbaController {
   }
 
   @PostMapping("/topup")
-  public String raiseBalance(@RequestParam String name, @ModelAttribute List<BankAccount> bankAccounts) {
+  public String raiseBalance(@RequestParam String name) {
     Optional<BankAccount> optionalBankAccount = bankAccounts.stream()
-        .filter(bankAccount -> bankAccount.getName().equals("name"))
+        .filter(bankAccount -> bankAccount.getName().equals(name))
         .findFirst();
     if (optionalBankAccount.isPresent()) {
       BankAccount bankAccount = optionalBankAccount.get();
-      bankAccount.setBalance(20000);
+      if (bankAccount.isKing().equals("king")) {
+        bankAccount.setBalance(bankAccount.getBalance() + 100);
+      } else {
+        bankAccount.setBalance(bankAccount.getBalance() + 10);
+      }
     }
-
-//    if (bankAccount.isKing().equals("king")) {
-//      bankAccount.setBalance(bankAccount.getBalance() + 100);
-//    } else {
-//      bankAccount.setBalance(bankAccount.getBalance() + 10);
-//    }
     return "redirect:/";
   }
 
