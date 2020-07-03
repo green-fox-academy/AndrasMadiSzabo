@@ -1,0 +1,14 @@
+div{
+    width: 80%;
+    margin: auto;
+}
+
+table{border: #ff7f9f 1px solid; text-align: left}
+
+td {padding: 5px;}
+
+tr:nth-child(even) {background: #cccccc}
+
+.king{background: #f5f0dc; color: #af9300
+}
+

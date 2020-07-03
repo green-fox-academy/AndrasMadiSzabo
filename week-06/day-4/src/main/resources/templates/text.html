@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Texts</title>
+</head>
+<body>
+<div>
+
+  <h3>This is an <span th:text="${em}"></span> text. <span th:text="${bold}"></span></h3>
+  <h3>This is an <span th:utext="${em}"></span> text. <span th:utext="${bold}"></span></h3>
+
+  <h3 th:text="|This is an ${em} text. ${bold}|"></h3>
+  <h3 th:utext="|This is an ${em} text. ${bold}|"></h3>
+
+</div>
+</body>
+</html>

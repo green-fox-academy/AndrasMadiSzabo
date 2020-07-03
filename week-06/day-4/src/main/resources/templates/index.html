@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title>BankAccount</title>
+</head>
+<body>
+<div>
+  <h1>Bank of Simba</h1>
+  <h2>Nants ingonyama bagithi baba!!!</h2>
+
+  <table>
+    <thead>
+    <th>Name</th>
+    <th>Balance</th>
+    <th>Currency</th>
+    <th>Animal Type</th>
+    <th>Index</th>
+    <th>Good or Bad</th>
+    </thead>
+    <tbody >
+    <tr th:each="account:${accounts}" th:attr="class=${account.isKing()}">
+<!--        th:class="${account.isKing()} ? king">-->
+      <td th:text="${account.name}"></td>
+      <td th:text="${account.balance}"></td>
+      <td th:text="${account.currency}"></td>
+      <td th:text="${account.animalType}"></td>
+      <td th:text="${account.index}"></td>
+      <td th:text="${account.getGoodOrBad()}"></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <h3>Raise balance</h3>
+  <form th:method="post" th:action="@{/topup}">
+    <label for="name">Add 10 zebras to this animal's balance</label>
+    <input type="text" name="name" id="name" >
+    <button type="submit">Raise Balance</button>
+  </form>
+
+  <div>
+    <h3>Add new account</h3>
+    <form action="/add" method="post">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name">
+      <br>
+      <label for="balance">Balance</label>
+      <input type="text" id="balance" name="balance">
+      <br>
+      <label for="animalType">Animal Type</label>
+      <input type="text" id="animalType" name="animalType">
+      <br>
+      <label for="goodOrBad">GOOD or BAD</label>
+      <input type="text" id="goodOrBad" name="goodOrBad">
+      <br>
+      <button type="submit">Add</button>
+    </form>
+  </div>
+
+</div>
+</body>
+</html>
