@@ -1,0 +1,50 @@
+
+*{
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", sans-serif;
+}
+
+header{
+    padding-left: 10%;
+}
+
+body{
+
+}
+
+.colomn{
+    float: left;
+    padding-left: 10%;
+
+}
+
+.left{
+    width: 30%;
+}
+
+.right {
+    width: 10%;
+}
+
+.middle {
+    width: 60%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    .colomn {
+        width: 100%
+    }
+}
+
+    footer{
+        padding-left: 10%;
+        font-size: 0.5rem;
+        color: chocolate;
+        text-align: right;
+    }

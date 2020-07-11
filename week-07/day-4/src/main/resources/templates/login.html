@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+  <link href="style.css" rel="stylesheet">
+  <title>Fox Club</title>
+</head>
+<body>
+
+<header>
+  <h1>Welcome to Programmer Fox Club Login</h1>
+</header>
+
+<div class="row">
+  <div class="left colomn"></div>
+
+  <div class="middle colomn">
+
+    <ul th:if="${name}!=null">
+      <li><a th:href="@{'/?name=' + ${name}}">Information</a></li>
+      <li><a th:href="@{'/login?name=' + ${name}}">Login</a></li>
+      <li><a th:href="@{'/nutritionstore?name='+${name}}">Nutrition Store</a></li>
+      <li><a th:href="@{'/trickcenter?name='+${name}}">Trick Center</a></li>
+    </ul>
+
+    <div th:if="${errormessage}">
+      <p>You didn't provide a name that has been used before.</p>
+      <p>You can add here a new one!</p>
+      <form method="post" th:action="@{'/addfox?name=' + ${name}}">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" th:placeholder="${name}">
+        <button type="submit">GO</button>
+      </form>
+    </div>
+
+    <p><span th:if="${errormessage}">Or, p</span><span th:unless="${errormessage}">P</span>lease, provide
+      a <span th:if="${errormessage}">new</span> name so that you can associate it to your pet.</p>
+
+    <div>
+      <form method="post" th:action="@{/login}">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+        <button type="submit">GO</button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="right colomn"></div>
+</div>
+
+<footer>
+</footer>
+</body>
+</html>
+

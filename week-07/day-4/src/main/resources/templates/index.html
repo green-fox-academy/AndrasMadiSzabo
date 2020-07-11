@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+  <link href="style.css" rel="stylesheet">
+  <title>Fox Club</title>
+</head>
+<body>
+
+<header>
+  <h1>Fox Club</h1>
+</header>
+
+<div class="row">
+  <div class="left colomn"></div>
+  <div class="middle colomn">
+
+    <ul>
+      <li><a th:href="@{'/?name=' + ${myFox.name}}" >Information</a></li>
+      <li><a th:href="@{'/login?name=' + ${myFox.name}}" >Login</a></li>
+      <li><a th:href="@{'/nutritionstore?name=' + ${myFox.name}}" >Nutrition Store</a></li>
+      <li><a th:href="@{'/trickcenter?name=' + ${myFox.name}}" >Trick Center</a></li>
+    </ul>
+
+    <img src="greenfox.png" alt="Greenfox green fox">
+
+<!--    <p>This is Mr Fox. Currently living on pizza and lemonade. He knows 2 tricks.</p>-->
+<!--    <p th:object="${lastFox}" th:text="|This is *{name}. Currently living on *{food.toString()} and *{drinks}.-->
+<!--    He knows *{trickList.size()} trick(s).|"></p>-->
+
+    <p th:object="${myFox}" th:text="|This is *{name}. Currently living on *{food} and *{drinks}.
+   He knows *{trickList.size()} trick(s).|"></p>
+
+
+    <h2>Known tricks</h2>
+    <ul th:each="trick:${myFox.getTrickList()}">
+      <li th:text="*{trick}"></li>
+    </ul>
+
+  </div>
+  <div class="right colomn"></div>
+</div>
+
+<footer>
+  <p>Just a little note for myself re: 3-col. layout.</p>
+  <a href="https://stackoverflow.com/questions/30141292/how-to-create-a-3-column-responsive-layout">3 colomn layout</a>
+</footer>
+</body>
+</html>
+
