@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" th:href="@{/css/style.css}"/>
+<head>
+  <meta charset="UTF-8">
+  <title>Todo CRUD App</title>
+</head>
+<body>
+
+<h1>Todos for today:</h1>
+
+<table class="table table-hover" style="margin: 30px">
+  <thead>
+  <tr style="text-transform: uppercase; font-style: italic">
+    <th>Id</th>
+    <th>Title</th>
+    <th>Urgent</th>
+    <th>Done</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="todo:${todos}" th:object="${todos}">
+    <td th:text="${todo.id}"></td>
+    <td th:text="${todo.title}"></td>
+    <td th:text="${todo.urgent}"></td>
+    <td th:text="${todo.done}"></td>
+  </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
