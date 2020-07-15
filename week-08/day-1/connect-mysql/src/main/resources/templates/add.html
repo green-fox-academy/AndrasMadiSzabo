@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Add Todo</title>
 </head>
 <body>
-$END$
+
+<h2>Add a todo:</h2>
+
+<form action="/todo/add" method="post">
+  <label for="title">Add todo</label>
+  <br>
+  <input id="title" name="action" type="text">
+  <br>
+  <br>
+  <label for="details">Add details</label>
+  <br>
+  <input id="details" name="details" type="text" style="height:10em; width:20em" size="255" >
+  <br>
+  <br>
+  <button type="submit">Add</button>
+</form>
+
 </body>
 </html>

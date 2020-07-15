@@ -12,23 +12,86 @@
 <h1>Todos for today:</h1>
 
 <table class="table table-hover" style="margin: 30px">
+  <tr>
+    <td>
+      <form action="/todo/search" method="get">
+        <input type="text" name="searchTerm" placeholder="Search by title, content or description">
+        <button type="submit">Search</button>
+      </form>
+    </td>
+    <td>
+      <form action="/todo/add">
+        <input type="submit" value="Add todo"/>
+      </form>
+    </td>
+    <td>
+      <form action="/todo/">
+        <input type="submit" value="All todos" style="background-color: #55f514"/>
+      </form>
+    </td>
+  </tr>
+</table>
+
+<table class="table table-hover" style="margin: 30px">
   <thead>
   <tr style="text-transform: uppercase; font-style: italic">
+    <th>Created at</th>
     <th>Id</th>
-    <th>Title</th>
+    <th>Action</th>
     <th>Urgent</th>
     <th>Done</th>
+    <td>Delete</td>
+    <td>Edit</td>
+    <td>Delete</td>
+    <td>Set urgency</td>
+    <td>Set status</td>
   </tr>
   </thead>
   <tbody>
   <tr th:each="todo:${todos}" th:object="${todos}">
+    <td th:text="${todo.creationDate}"></td>
     <td th:text="${todo.id}"></td>
-    <td th:text="${todo.title}"></td>
-    <td th:text="${todo.urgent}"></td>
-    <td th:text="${todo.done}"></td>
+    <td> <a th:href="@{|/todo/${todo.id}/details|}" th:text="${todo.title}"></a></td>
+    <td>
+      <div>
+        <a th:href="@{|/todo/${todo.id}/urgent|}" th:text="${todo.urgent}"></a>
+      </div>
+    <td>
+      <div>
+        <a th:href="@{|/todo/${todo.id}/status|}" th:text="${todo.done}"></a>
+      </div>
+    </td>
+    <td>
+      <div>
+        <a th:href="@{|/todo/${todo.id}/delete|}">Del</a>
+      </div>
+    </td>
+    <td>
+      <div>
+        <a th:href="@{|/todo/${todo.id}/edit|}" >Edit</a>
+      </div>
+    </td>
+    <td>
+      <form action="/todo/delete" method="post" style="margin: 10px">
+        <input type="submit" value="D" th:value="${todo.id}" name="id" th:text="Del">
+      </form>
+    </td>
+    <td>
+      <form action="/todo/urgent" method="post" style="margin: 10px">
+        <input type="submit" th:value="${todo.id}" name="id" th:text="Change">
+      </form>
+    </td>
+
+    <td>
+      <form action="/todo/status" method="post" style="margin: 10px">
+        <input type="submit" th:value="${todo.id}" name="id" th:text="Change">
+      </form>
+    </td>
+
   </tr>
   </tbody>
 </table>
+
 
 </body>
 </html>

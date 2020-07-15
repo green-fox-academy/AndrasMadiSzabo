@@ -8,11 +8,29 @@
 
 <h2>Add a todo:</h2>
 
-<form action="/todo/add" method="post">
-  <label for="add">Add todo</label>
-  <input id="add" name="action" type="text">
-  <button type="submit">Add</button>
+<form th:action="@{|/todo/${todo.id}/edit|}" method="post" th:object="${todo}">
+  <label for="title">Add todo</label>
+  <br>
+  <input id="title" name="action" type="text" th:placeholder="*{title}">
+  <br>
+  <br>
+  <label for="details">Add details</label>
+  <br>
+  <input id="details" name="details" type="text" th:placeholder="*{details}"
+         style="height:10em; width:20em" size="255" >
+  <br>
+  <div>
+    <label for="urgent" >Urgent</label>
+    <input type="checkbox" id="urgent" th:field="*{urgent}" />
+  </div>
+  <div>
+    <label for="done" >Done</label>
+    <input type="checkbox" id="done" th:field="*{done}" />
+  </div>
+  <button type="submit">Edit</button>
 </form>
+
+<p th:placeholder="${todo.id}" th:text="${todo.id}">Id?</p>
 
 </body>
 </html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" th:href="@{/css/style.css}"/>
+  <title>Add Todo</title>
+</head>
+<body>
+
+<h2>Details</h2>
+
+<table class="table table-hover" style="margin: 30px">
+  <thead>
+  <tr style="text-transform: uppercase; font-style: italic">
+    <th>Title</th>
+    <th>Details</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><label for="w3review" th:text="${todo.title}" style="font-size:1.5em" ></label></td>
+    <td>
+      <textarea id="w3review" name="w3review" rows="4" cols="60" th:text="${todo.details}"></textarea>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<a href="/todo/"><h6>Back to list</h6></a>
+
+
+</body>
+</html>
