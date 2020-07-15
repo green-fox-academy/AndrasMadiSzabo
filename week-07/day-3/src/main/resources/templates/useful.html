@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Useful</title>
 </head>
 <body>
-$END$
+
+<h2>Option 1</h2>
+<a href="/useful/colored">Colored Background</a>
+
+<h2>Option 2</h2>
+<form method="post" name="email" th:action="@{useful/email}">
+  <label for="email">Email</label>
+  <input name="email" id="email" th:type="text" placeholder="Insert an email">
+  <button type="submit">Send</button>
+</form>
+
+<h2>Option 3</h2>
+<form method="post" th:action="@{useful/encoding}">
+  <label for="encoding">Encoder</label>
+  <input name="text" id="encoding" th:type="text" placeholder="Put text here">
+  <input name="number" id="number" th:type="text" placeholder="Put number here">
+  <button type="submit">Encode</button>
+</form>
+
+<form method="post" th:action="@{useful/decoding}">
+  <label for="decoding">Decoder</label>
+  <input name="text" id="decoding" th:type="text" placeholder="Put text here">
+  <input name="number" th:type="text" placeholder="Put number here">
+  <button type="submit">Encode</button>
+</form>
+
+
 </body>
 </html>

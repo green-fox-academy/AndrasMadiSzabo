@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="styles.css">
-  <title>My Shop</title>
+  <title>My Shop Results</title>
 </head>
 <body>
 <header>
-  <h1>My Shop</h1>
+  <h1 id="left"><a href="/">My Shop</a></h1>
+  <h1 id="right"><a href="/more-filters">More >> </a> </h1>
 </header>
 <nav class="topnav">
   <a class="active" href="/">Home</a>
@@ -15,31 +16,23 @@
   <a href="/cheapest-first">Cheapest First</a>
   <a href="contains-nike">Contains Nike</a>
   <a href="/average-stock">Average Stock</a>
-  <a href="#contact">Most Expensive Available</a>
-  <input type="text" placeholder="Search..">
+  <a href="/most-expensive">Most Expensive Available</a>
+  <form th:method="post" th:action="@{/search}">
+    <button type="submit">Search</button>
+    <input id="search" type="text" name="name" placeholder="Search..">
+  </form>
 </nav>
 <section>
   <article>
-    <table>
-      <thead>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Quantity if Stock</th>
-      </thead>
-      <tbody>
-      <tr th:each="item:${shopItemList}" th:object="${item}">
-        <td th:text="*{name}"></td>
-        <td th:text="*{description}"></td>
-        <td th:text="|*{price} Kcs|"></td>
-        <td th:text="*{quantityOfStock}"></td>
-      </tr>
-      </tbody>
-    </table>
+    <div th:if="${averageStock}" >
+<p th:text="|The average stock is ${averageStock}|"></p>
+    </div>
+    <div th:if="${mostExpensive}" >
+<p th:text="|The most expensive item is ${mostExpensive}|"></p>
+    </div>
   </article>
 </section>
 <footer></footer>
 </body>
 </html>
 
-<p th:text="|The average stock is ${averageStock}|"></p>

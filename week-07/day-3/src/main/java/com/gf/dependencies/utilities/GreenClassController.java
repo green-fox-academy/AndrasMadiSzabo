@@ -1,2 +1,9 @@
-package com.gf.dependencies.utilities;public class GreenClassController {
+package com.gf.dependencies.utilities;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class GreenClassController {
+
+  
 }

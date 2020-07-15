@@ -27,13 +27,21 @@ public class FoxService {
   }
 
   public void addFox(String name) {
+    System.out.println(name + " recieved");
     Fox myFox = new Fox(name);
-    System.out.println(myFox.getName());
-    System.out.println(foxList);
+    System.out.println(myFox.getName() + " foxname after new Fox");
+    System.out.println("Foxes before add:");
+    printFoxes();
     foxList.add(myFox);
-    System.out.println(myFox.getName());
-    System.out.println(foxList);
+    System.out.println(myFox.getName() + " added");
+    System.out.println("Foxes after add:");
+    printFoxes();
   }
-  
+
+  private void printFoxes() {
+    for (Fox fox : foxList) {
+      System.out.println("- " + fox.getName());
+    }
+  }
 
 }

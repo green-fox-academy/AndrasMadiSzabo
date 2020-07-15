@@ -2,23 +2,28 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="styles.css">
-  <title>My Shop</title>
+  <link rel="stylesheet" th:href="@{/styles.css}">
+  <title>My Shop filtered</title>
 </head>
 <body>
 <header>
-  <h1>My Shop</h1>
+  <h1 id="left"><a href="/">My Shop</a></h1>
+  <h1 id="right"><a href="/more-filters">More >> </a> </h1>
 </header>
 <nav class="topnav">
   <a class="active" href="/">Home</a>
-  <a href="/only-available">Only Available</a>
-  <a href="/cheapest-first">Cheapest First</a>
-  <a href="contains-nike">Contains Nike</a>
-  <a href="/average-stock">Average Stock</a>
-  <a href="/most-expensive">Most Expensive Available</a>
-  <form th:method="post" th:action="@{/search}">
-    <button type="submit">Search</button>
-    <input id="search" type="text" name="name" placeholder="Search..">
+  <a href="/filter-by-type/clothes">Clothes and Shoes</a>
+  <a href="/filter-by-type/electronics">Electronics</a>
+  <a href="/filter-by-type/food">Beverages and Snacks</a>
+  <a href="/currency/euro">Euro</a>
+  <a href="/currency/kcs">Original Currency</a>
+<!--  <a href="euro">Euro</a>-->
+<!--  <a href="/kcs">Original Currency</a>-->
+  <form th:method="post" th:action="@{/filter-by-price}">
+    <input id="search" type="text" name="priceString" placeholder="Search.."/>
+    <button type="submit" name="input" value="exactly">Exactly</button>
+    <button type="submit" name="input" value="below">Below</button>
+    <button type="submit" name="input" value="above">Above</button>
   </form>
 </nav>
 <section>
@@ -34,7 +39,7 @@
       <tr th:each="item:${shopItemList}" th:object="${item}">
         <td th:text="*{name}"></td>
         <td th:text="*{description}"></td>
-        <td th:text="|*{price} Kcs|"></td>
+        <td th:text="|*{price} *{currency}|"></td>
         <td th:text="*{quantityOfStock}"></td>
       </tr>
       </tbody>

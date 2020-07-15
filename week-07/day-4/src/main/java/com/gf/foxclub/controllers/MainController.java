@@ -5,7 +5,6 @@ import com.gf.foxclub.models.Food;
 import com.gf.foxclub.models.Fox;
 import com.gf.foxclub.models.Tricks;
 import com.gf.foxclub.services.FoxService;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,17 +27,19 @@ public class MainController {
   @GetMapping("/")
   public String index(Model model, @RequestParam(required = false) String name) {
     if (name == null) {
-      model.addAttribute("name", name);
+      System.out.println(name + " if name == null at /");
       return "redirect:/login";
     }
     Fox myFox = this.foxService.getFoxByName(name);
     if (myFox != null) {
       model.addAttribute("myFox", myFox);
       model.addAttribute("name", name);
+      System.out.println(name + " if myFox != null at /");
     } else {
       model.addAttribute("name", name);
       model.addAttribute("errormessage",
           "You have provided a name that has not been used before, add it as a new one!");
+      System.out.println(name + " if myFox == null at /");
       return "redirect:/login?name=" + name + "&errormessage=errormessage";
 //      model.addAttribute("myFox", this.foxService.addFox(name));
     }
@@ -57,20 +58,27 @@ public class MainController {
 
   @PostMapping("/login")
   public String loginInfo(@RequestParam String name, Model model) {
+      System.out.println(name + " at login at arrival");
     Fox myFox = foxService.getFoxByName(name);
     if (myFox == null) {
+      System.out.println(name + " after search");
+      System.out.println(foxService.getFoxByName(name) + " as FoxName at login if myFox == null");
       model.addAttribute("errormessage",
           "You have provided a name that has not been used before, add it as a new one!");
       model.addAttribute("name", name);
       return "/login";
     }
+      System.out.println(name + " at login if myFox == null");
     return "redirect:/?name=" + myFox.getName();
   }
 
   @PostMapping("/addfox")
   public String addFox(@RequestParam String name, Model model) {
+    System.out.println(name + " before addFox");
     this.foxService.addFox(name);
+    System.out.println(name + " after addFox");
     Fox myFox = foxService.getFoxByName(name);
+    System.out.println(name + " after getFoxByName");
     model.addAttribute("name", name);
     return "redirect:/?name=" + myFox.getName();
   }

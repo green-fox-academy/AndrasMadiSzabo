@@ -24,17 +24,21 @@
     </ul>
 
     <div th:if="${errormessage}">
-      <p>You didn't provide a name that has been used before.</p>
-      <p>You can add here a new one!</p>
+      <p>You have provided a name that has not been used before.</p>
+      <p>Add it to the Club?</p>
       <form method="post" th:action="@{'/addfox?name=' + ${name}}">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" th:placeholder="${name}">
+        <button type="submit" name="name">Add <span th:text="${name}"></span> </button>
+      </form>
+      <p>Or add a new name?</p>
+      <form method="post" th:action="@{'/addfox?name=' + ${newName}}">
+        <label for="newName">Name</label>
+        <input type="text" newName="newName" id="newName" >
         <button type="submit">GO</button>
       </form>
     </div>
 
-    <p><span th:if="${errormessage}">Or, p</span><span th:unless="${errormessage}">P</span>lease, provide
-      a <span th:if="${errormessage}">new</span> name so that you can associate it to your pet.</p>
+    <p><span th:if="${errormessage}">Or p</span><span th:unless="${errormessage}">P</span>lease, provide
+      a <span th:if="${errormessage}">new</span> name of club member foxes to find your pet.</p>
 
     <div>
       <form method="post" th:action="@{/login}">

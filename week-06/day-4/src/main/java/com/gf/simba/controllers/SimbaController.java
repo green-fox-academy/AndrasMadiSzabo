@@ -29,6 +29,7 @@ public class SimbaController {
 
   @GetMapping("/")
   public String showAccounts(Model model) {
+    model.addAttribute("types", Arrays.asList(GoodOrBad.values()));
     model.addAttribute("accounts", bankAccounts);
     return "index";
   }
@@ -43,7 +44,7 @@ public class SimbaController {
   @PostMapping("/topup")
   public String raiseBalance(@RequestParam String name) {
     Optional<BankAccount> optionalBankAccount = bankAccounts.stream()
-        .filter(bankAccount -> bankAccount.getName().equals(name))
+        .filter(bankAccount -> bankAccount.getName().toLowerCase().equals(name.toLowerCase()))
         .findFirst();
     if (optionalBankAccount.isPresent()) {
       BankAccount bankAccount = optionalBankAccount.get();
@@ -57,7 +58,7 @@ public class SimbaController {
   }
 
   @PostMapping("/add")
-  public String add(@ModelAttribute BankAccount bankAccount){
+  public String add(@ModelAttribute BankAccount bankAccount) {
     BankAccount newAccount = new BankAccount(bankAccount.getName(), bankAccount.getBalance(),
         bankAccount.getAnimalType(), bankAccount.getGoodOrBad());
     bankAccounts.add(newAccount);
