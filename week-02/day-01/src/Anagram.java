@@ -5,8 +5,20 @@ public class Anagram {
     System.out.println(anagram("cica", "acci"));
   }
 
-  public static boolean anagram(String a, String b) {
-    if (a.length() != b.length()) {
+//  public static boolean anagram(String a, String b) {
+//    if (a.length() != b.length()) {
+//      return false;
+//    } else {
+//      char[] aToChar = a.toCharArray();
+//      char[] bToChar = b.toCharArray();
+//      Arrays.sort(aToChar);
+//      Arrays.sort(bToChar);
+//      return Arrays.equals(aToChar, bToChar);
+//    }
+//  }
+
+  public static boolean anagram(String a, String b){
+    if (a.length() != b.length()){
       return false;
     } else {
       char[] aToChar = a.toCharArray();
@@ -15,5 +27,6 @@ public class Anagram {
       Arrays.sort(bToChar);
       return Arrays.equals(aToChar, bToChar);
     }
+
   }
 }

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <title>Login to My Reddit App</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8"/>
+</head>
+<body style="margin: 30px">
+
+
+<h1>Login</h1>
+
+<div th:if="${userError}">
+<h2 th:text="${userError.loginError}"></h2>
+  <p>Re-enter your credentials or <a href="/register">register</a> an account.</p>
+</div>
+
+<form action="/login" method="post"  style="margin: 30px">
+  <div class="form-group">
+    <label for="username">Username: </label>
+    <input id="username" name="username" type="text" placeholder="Your username" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="password">Password: </label>
+    <input id="password" name="password" type="text" placeholder="Your password" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</body>
+</html>

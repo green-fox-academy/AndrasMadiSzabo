@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <title>My Reddit App</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8"/>
+</head>
+<body  class="container">
+
+<!-- As a link -->
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+
+<!--      <a th:href="@{'/submit?username=' + ${user.username}}" style="margin: 30px">Submit new post</a>-->
+      <a th:href="@{'/submit/?username=' + ${user.username}}" style="margin: 30px">Submit new post</a>
+
+      <span th:if="${username}">Logged in as <span th:text="${username}"></span>
+<!--      <span th:if="${user.activeUser==true}">Logged in as <span th:text="${user.username}"></span>-->
+        (or <a href="/logout">log out</a>)</span>
+      <span th:if="${username==null}"><a href="/login">Log in</a> or <a href="/register">register</a></span>
+
+</nav>
+
+<h1><a href="/">Trending</a> posts</h1>
+
+<table class="table table-hover" style="margin: 30px">
+  <tr style="text-transform: uppercase; font-style: italic">
+    <th>Votes</th>
+    <th>Up</th>
+    <th>Down</th>
+    <th>Posts</th>
+    <th>Date</th>
+    <th>Created by</th>
+  </tr>
+  <tr th:each="post : ${onePageOfPosts}" th:object="${post}">
+    <td th:text="*{vote}"></td>
+    <td><a th:href="@{|/+/${post.id}/${user.getUsername()}|}">+</a></td>
+    <td><a th:href="@{|/-/${post.id}/${user.getUsername()}|}">-</a></td>
+    <td th:text="*{title}"></td>
+    <td th:text="*{creationDate}"></td>
+    <td th:text="*{user} == null ? 'Who knows?' : *{user.username}"></td>
+  </tr>
+</table>
+
+<div class="pages">
+  <table style="margin: 30px">
+    <tr>
+      <td class="pagelinks" th:each="page:${numberOfPages}">
+        <a th:href="@{'/?page=' + ${page} + '&username=' + ${user.getUsername()}}" th:text="${page}"></a></td>
+<!--      <td><a th:href="@{'/?fwd=fwd'}"> >> </a></td>-->
+    </tr>
+  </table>
+</div>
+
+</body>
+</html>
+
+
+<!--
+<table class="table table-hover">-->
+<!--  <tr>-->
+<!--    <td>-->
+<!--&lt;!&ndash;      <a th:href="@{'/submit?username=' + ${user.username}}" style="margin: 30px">Submit new post</a>&ndash;&gt;-->
+<!--      <a th:href="@{/submit}" style="margin: 30px">Submit new post</a>-->
+<!--    </td>-->
+<!--    <td class="loggedInUser">-->
+<!--      <span th:if="${user.username!=null}">Logged in as <span th:text="${user.username}"></span>-->
+<!--        (or <a href="/logout">log out</a>)</span>-->
+<!--      <span th:if="${user.username==null}"><a href="/login">Log in</a> or <a href="/register">register</a></span>-->
+<!--    </td>-->
+<!--  </tr>-->
+<!--</table>-->
+
+<!--<h1><a href="/">Trending</a> posts</h1>-->
+
+<!--<table class="table table-hover" style="margin: 30px">-->
+<!--  <tr style="text-transform: uppercase; font-style: italic">-->
+<!--    <th>Votes</th>-->
+<!--    <th>Up</th>-->
+<!--    <th>Down</th>-->
+<!--    <th>Posts</th>-->
+<!--    <th>Date</th>-->
+<!--    <th>Created by</th>-->
+<!--  </tr>-->
+<!--  <tr th:each="post : ${posts}" th:object="${post}">-->
+<!--    <td th:text="*{vote}"></td>-->
+<!--    <td><a th:href="@{|/+/${post.id}|}">+</a></td>-->
+<!--    <td><a th:href="@{|/-/${post.id}|}">-</a></td>-->
+<!--    <td th:text="*{title}"></td>-->
+<!--    <td th:text="*{creationDate}"></td>-->
+<!--    <td th:text="*{user}"></td>-->
+<!--  </tr>-->
+<!--</table>-->
+
+<!--<div class="pages">-->
+<!--  <table style="margin: 30px">-->
+<!--    <tr>-->
+<!--      <td class="pagelinks" th:each="page:${pagenumbers}">-->
+<!--        <a th:href="@{'/?page=' + ${page}}" th:text="${page}"></a></td>-->
+<!--&lt;!&ndash;      <td><a th:href="@{'/?fwd=fwd'}"> >> </a></td>&ndash;&gt;-->
+<!--    </tr>-->
+<!--  </table>-->
+<!--</div>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!--        <td th:switch="${user}"  class="loggedInUser">-->
+<!--            <span th:case="'!null'" th:text="'Logged in as ' + ${user.username}" class="loggedInUser"></span>-->
+<!--            <span th:case="'null'" th:href="@{/login}" th:text="'Log in">Log in</span>-->
+<!--        </td>-->
