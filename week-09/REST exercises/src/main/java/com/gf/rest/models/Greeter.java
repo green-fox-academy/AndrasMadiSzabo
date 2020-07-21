@@ -12,4 +12,9 @@ public class Greeter {
   private String name;
   private String title;
 
+  public Greeter(String welcomeMessage, String name, String title) {
+    this.welcomeMessage = welcomeMessage;
+    this.name = name;
+    this.title = title;
+  }
 }
