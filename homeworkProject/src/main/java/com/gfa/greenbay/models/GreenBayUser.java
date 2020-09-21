@@ -13,12 +13,14 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class User {
+public class GreenBayUser {
 
-  @Id
-  @GeneratedValue
-  private long id;
+  @Id @GeneratedValue private long id;
   private String username;
   private String password;
 
+  public GreenBayUser(String username, String password) {
+    this.username = username;
+    this.password = password;
+  }
 }

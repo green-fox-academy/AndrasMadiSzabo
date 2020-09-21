@@ -1,13 +1,15 @@
 package com.gfa.greenbay.repositories;
 
 
-import com.gfa.greenbay.models.User;
+import com.gfa.greenbay.models.GreenBayUser;
 import java.util.Optional;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends CrudRepository<User, String> {
+public interface UserRepository extends CrudRepository<GreenBayUser, Long> {
 
-  Optional<User> findByUsername(String username);
+  Optional<GreenBayUser> findGreenBayUserByUsername(String username);
+
+//  GreenBayUser findGreenBayUserByUsername(String username);
 }
