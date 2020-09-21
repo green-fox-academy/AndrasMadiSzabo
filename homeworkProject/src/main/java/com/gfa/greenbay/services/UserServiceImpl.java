@@ -8,6 +8,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Service;
 
@@ -46,7 +47,6 @@ public class UserServiceImpl implements UserService {
   @Override
   public boolean userNameExists(LoginRequestDTO loginRequestDTO) {
     Optional<GreenBayUser> existingUser = userRepository.findGreenBayUserByUsername(loginRequestDTO.username);
-//    System.out.println(existingUser.get().getUsername());
     return existingUser.isPresent();
   }
 
@@ -55,10 +55,10 @@ public class UserServiceImpl implements UserService {
     try{
       authenticationManager.authenticate(
           new UsernamePasswordAuthenticationToken(username, password));
-//    } catch (DisabledException e) {
-//      throw new Exception("User Disabled", e);
-    } catch (BadCredentialsException e) {
-      throw new Exception("Incorrect username or password", e);
+    } catch (DisabledException e) {
+      throw new Exception("User Disabled", e);
+//    } catch (BadCredentialsException e) {
+//      throw new Exception("Incorrect username or password", e);
     }
   }
 
@@ -66,4 +66,5 @@ public class UserServiceImpl implements UserService {
   public void saveUser(String username, String password) {
     userRepository.save(new GreenBayUser(username, password));
   }
+
 }

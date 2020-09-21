@@ -48,17 +48,16 @@ public class UserController {
   public ResponseEntity<?> createAuthenticationToken (
       @RequestBody LoginRequestDTO loginRequestDTO) throws Exception {
 
-//    userService.manageAuthentication(loginRequestDTO);
 
     final HttpHeaders httpHeaders = new HttpHeaders();
     httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-// ezt akar a szervizben is meg lehetne oldani //////////////////////////////////////////////////////////////////////
+
     String checkParams = userService.missingCredentials(loginRequestDTO);
     if (!checkParams.equals("ok")){
       return ResponseEntity
           .status(HttpStatus.BAD_REQUEST)
           .headers(httpHeaders)
-          .body(new ErrorStatusDTO("error", "Missing parameter(s)"
+          .body(new ErrorStatusDTO("error", "Missing parameter(s): "
               + checkParams + "."));
     } else if (!userService.userNameExists(loginRequestDTO)){
       return ResponseEntity
@@ -73,7 +72,7 @@ public class UserController {
         return ResponseEntity
             .status(HttpStatus.UNAUTHORIZED)
             .headers(httpHeaders)
-            .body(new ErrorStatusDTO("error", "Wrong password"));
+            .body(new ErrorStatusDTO("error", "No, this is not the correct password"));
       }
     }
 

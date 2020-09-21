@@ -1,6 +1,8 @@
 package com.gfa.greenbay.services;
 
 import com.gfa.greenbay.models.LoginRequestDTO;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,6 +15,5 @@ public interface UserService {
   void authenticate(String username, String password) throws Exception;
 
   void saveUser(String username, String password);
-
 
 }
