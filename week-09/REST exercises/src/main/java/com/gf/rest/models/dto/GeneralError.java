@@ -1,4 +1,4 @@
-package com.gf.rest.models;
+package com.gf.rest.models.dto;
 
 import lombok.Getter;
 import lombok.Setter;
