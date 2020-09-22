@@ -1,4 +1,4 @@
-package com.gfa.greenbay.models;
+package com.gfa.greenbay.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

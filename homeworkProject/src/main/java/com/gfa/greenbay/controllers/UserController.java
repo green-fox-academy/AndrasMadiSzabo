@@ -1,8 +1,8 @@
 package com.gfa.greenbay.controllers;
 
 import com.gfa.greenbay.dtos.ErrorStatusDTO;
-import com.gfa.greenbay.models.LoginRequestDTO;
-import com.gfa.greenbay.models.LoginResponseDTO;
+import com.gfa.greenbay.dtos.LoginRequestDTO;
+import com.gfa.greenbay.dtos.LoginResponseDTO;
 import com.gfa.greenbay.security.JwtTokenUtil;
 import com.gfa.greenbay.security.JwtUserDetailsService;
 import com.gfa.greenbay.services.UserService;
@@ -77,13 +77,14 @@ public class UserController {
     }
 
     final UserDetails userDetails = userDetailsService.loadUserByUsername(loginRequestDTO.username);
-
-    final String token = jwtTokenUtil.generateToken(userDetails);
+    final Long userId = userService.getUserIdByUsername(loginRequestDTO.username);
+    final int greenBayDollarsAccount = userService.getgreenBayDollarsAccountByUsername(loginRequestDTO.username);
+    final String token = jwtTokenUtil.generateToken(userDetails, userId, greenBayDollarsAccount);
 
     return ResponseEntity
         .status(HttpStatus.OK)
         .headers(httpHeaders)
-        .body(new LoginResponseDTO(token, "ok"));
+        .body(new LoginResponseDTO(token, "ok", greenBayDollarsAccount));
   }
 
 

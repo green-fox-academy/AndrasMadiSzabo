@@ -1,4 +1,4 @@
-package com.gfa.greenbay.models;
+package com.gfa.greenbay.dtos;
 
 import java.io.Serializable;
 import lombok.AllArgsConstructor;
@@ -11,6 +11,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class LoginResponseDTO implements Serializable {
-  private String token;
   private String status;
+  private int greenBayDollarsAccount;
+  private String token;
+
 }

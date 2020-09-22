@@ -1,13 +1,12 @@
 package com.gfa.greenbay.services;
 
 import com.gfa.greenbay.models.GreenBayUser;
-import com.gfa.greenbay.models.LoginRequestDTO;
+import com.gfa.greenbay.dtos.LoginRequestDTO;
 import com.gfa.greenbay.repositories.UserRepository;
 import java.util.ArrayList;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Service;
@@ -65,6 +64,16 @@ public class UserServiceImpl implements UserService {
   @Override
   public void saveUser(String username, String password) {
     userRepository.save(new GreenBayUser(username, password));
+  }
+
+  @Override
+  public Long getUserIdByUsername(String username) {
+    return userRepository.findGreenBayUserByUsername(username).get().getId();
+  }
+
+  @Override
+  public int getgreenBayDollarsAccountByUsername(String username) {
+    return userRepository.findGreenBayUserByUsername(username).get().getGreenBayDollarsAccount();
   }
 
 }

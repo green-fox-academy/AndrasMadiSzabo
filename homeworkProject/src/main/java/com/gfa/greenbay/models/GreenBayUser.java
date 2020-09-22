@@ -18,6 +18,7 @@ public class GreenBayUser {
   @Id @GeneratedValue private long id;
   private String username;
   private String password;
+  private int greenBayDollarsAccount;
 
   public GreenBayUser(String username, String password) {
     this.username = username;

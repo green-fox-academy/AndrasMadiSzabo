@@ -15,8 +15,10 @@ public class JwtTokenUtil {
 
   private String SECRET_KEY = "nemmondomelsenkinek";
 
-  public String generateToken(UserDetails userDetails) {
+  public String generateToken(UserDetails userDetails, Long userId, int greenBayDollarsAccount) {
     Map<String, Object> claims = new HashMap<>();
+    claims.put("userId", userId);
+    claims.put("greenBayDollarsAccount", greenBayDollarsAccount);
     return createToken(claims, userDetails.getUsername());
   }
 

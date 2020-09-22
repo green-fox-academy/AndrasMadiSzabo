@@ -1,8 +1,6 @@
 package com.gfa.greenbay.services;
 
-import com.gfa.greenbay.models.LoginRequestDTO;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.ResponseEntity;
+import com.gfa.greenbay.dtos.LoginRequestDTO;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,4 +14,7 @@ public interface UserService {
 
   void saveUser(String username, String password);
 
+  Long getUserIdByUsername(String username);
+
+  int getgreenBayDollarsAccountByUsername(String username);
 }
