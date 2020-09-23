@@ -118,6 +118,7 @@ public class ItemController {
     if (itemService.findSellableItemById(id) != null) {
       return ResponseEntity.status(HttpStatus.OK)
           .headers(httpHeaders)
+//          .body("The required item is this: \n" + itemService.findSellableItemByIdReturnDTO(id).toString());
           .body("The required item is this: \n" + itemService.findSellableItemById(id).toString());
     }
 
@@ -131,6 +132,12 @@ public class ItemController {
 
     final HttpHeaders httpHeaders = new HttpHeaders();
     httpHeaders.setContentType(MediaType.APPLICATION_JSON);
+
+    if(pageNumber.get() < 1){
+      return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+          .headers(httpHeaders)
+          .body("Can't believe it.The page parameter is not a positive whole number. Change that.");
+    }
 
     if (pageNumber.isEmpty()){
       pageNumber= Optional.of(1);

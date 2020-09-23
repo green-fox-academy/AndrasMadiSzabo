@@ -2,6 +2,7 @@ package com.gfa.greenbay.services;
 
 import com.gfa.greenbay.dtos.BidRequestDTO;
 import com.gfa.greenbay.dtos.ItemRequestDTO;
+import com.gfa.greenbay.dtos.ItemResponseDTO;
 import com.gfa.greenbay.models.Bid;
 import com.gfa.greenbay.models.GreenBayUser;
 import com.gfa.greenbay.models.SellableItem;
@@ -10,7 +11,6 @@ import com.gfa.greenbay.repositories.ItemRepository;
 import com.gfa.greenbay.repositories.UserRepository;
 import java.security.Principal;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -176,6 +176,23 @@ public class ItemServiceImpl implements ItemService {
   public SellableItem findSellableItemById(Long id) {
     Optional<SellableItem> optionalSellableItem = itemRepository.findById(id);
     return optionalSellableItem.orElse(null);
+  }
+
+
+  public ItemResponseDTO findSellableItemByIdReturnDTO(Long id) {
+    Optional<SellableItem> optionalSellableItem = itemRepository.findById(id);
+    return new ItemResponseDTO(
+        optionalSellableItem.get().getName(),
+        optionalSellableItem.get().getDescription(),
+        optionalSellableItem.get().getPhotoUrl(),
+        optionalSellableItem.get().isSellable(),
+        optionalSellableItem.get().getSellerName(),
+        optionalSellableItem.get().getStartingPrice(),
+        optionalSellableItem.get().getPurchasePrice(),
+        optionalSellableItem.get().getLastBid(),
+        optionalSellableItem.get().getBidHistory(),
+        optionalSellableItem.get().getBuyerName()
+    );
   }
 
   @Override

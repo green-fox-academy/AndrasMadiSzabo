@@ -2,6 +2,7 @@ package com.gfa.greenbay.services;
 
 import com.gfa.greenbay.dtos.BidRequestDTO;
 import com.gfa.greenbay.dtos.ItemRequestDTO;
+import com.gfa.greenbay.dtos.ItemResponseDTO;
 import com.gfa.greenbay.models.SellableItem;
 import java.security.Principal;
 import java.util.List;
@@ -34,6 +35,7 @@ public interface ItemService {
   boolean itemSold(BidRequestDTO bidRequestDTO);
 
   SellableItem findSellableItemById(Long id);
+  public ItemResponseDTO findSellableItemByIdReturnDTO(Long id);
 
   Page<SellableItem> findAllSellableItems(Integer pageNumber);
 
