@@ -84,7 +84,7 @@ public class UserController {
     return ResponseEntity
         .status(HttpStatus.OK)
         .headers(httpHeaders)
-        .body(new LoginResponseDTO(token, "ok", greenBayDollarsAccount));
+        .body(new LoginResponseDTO( "ok", greenBayDollarsAccount, token));
   }
 
 

@@ -9,11 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ItemRequestDTO {
+public class BidRequestDTO {
   private Long id;
-  private String name;
-  private String description;
-  private String photoUrl;
-  private Integer startingPrice;
-  private Integer purchasePrice;
+  private Integer lastBid;
 }
