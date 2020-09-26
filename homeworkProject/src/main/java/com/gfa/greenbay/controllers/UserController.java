@@ -24,14 +24,12 @@ public class UserController {
   JwtTokenUtil jwtTokenUtil;
   JwtUserDetailsService userDetailsService;
   UserService userService;
-//  PasswordEncoder passwordEncoder;
 
   @Autowired
   public UserController(
       JwtTokenUtil jwtTokenUtil,
       JwtUserDetailsService userDetailsService,
       UserService userService
-//      PasswordEncoder passwordEncoder
   ) {
     this.jwtTokenUtil = jwtTokenUtil;
     this.userDetailsService = userDetailsService;
@@ -39,10 +37,6 @@ public class UserController {
 //    this.passwordEncoder = passwordEncoder;
   }
 
-  @GetMapping("/hello")
-  public String hello(){
-    return "hello";
-  }
 
   @PostMapping("/login")
   public ResponseEntity<?> createAuthenticationToken (

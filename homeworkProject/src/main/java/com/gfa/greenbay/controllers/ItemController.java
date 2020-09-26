@@ -133,7 +133,7 @@ public class ItemController {
     final HttpHeaders httpHeaders = new HttpHeaders();
     httpHeaders.setContentType(MediaType.APPLICATION_JSON);
 
-    if(pageNumber.get() < 1){
+    if(pageNumber.isPresent() && pageNumber.get() < 1){
       return ResponseEntity.status(HttpStatus.BAD_REQUEST)
           .headers(httpHeaders)
           .body("Can't believe it.The page parameter is not a positive whole number. Change that.");
@@ -145,15 +145,16 @@ public class ItemController {
     Page<SellableItem> sellableItemList = itemService.findAllSellableItems(pageNumber.get());
 
 
-    if (sellableItemList != null || !sellableItemList.isEmpty()) {
+    if (sellableItemList == null || sellableItemList.isEmpty()) {
+      return ResponseEntity.status(HttpStatus.NOT_FOUND)
+          .headers(httpHeaders)
+          .body("No items on this page.");
+    } else {
       return ResponseEntity.status(HttpStatus.OK)
           .headers(httpHeaders)
           .body("The required items: \n" + sellableItemList.getContent());
     }
 
-    return ResponseEntity.status(HttpStatus.NOT_FOUND)
-        .headers(httpHeaders)
-        .body("Can't believe it. Didn't manage to find these items in the database.");
   }
 
   @PostMapping("/create-50-items")

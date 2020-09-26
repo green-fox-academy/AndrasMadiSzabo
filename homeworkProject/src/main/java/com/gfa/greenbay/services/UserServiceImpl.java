@@ -2,6 +2,7 @@ package com.gfa.greenbay.services;
 
 import com.gfa.greenbay.models.GreenBayUser;
 import com.gfa.greenbay.dtos.LoginRequestDTO;
+import com.gfa.greenbay.models.NoSuchUserException;
 import com.gfa.greenbay.repositories.UserRepository;
 import java.util.ArrayList;
 import java.util.Optional;
@@ -74,6 +75,12 @@ public class UserServiceImpl implements UserService {
   @Override
   public int getgreenBayDollarsAccountByUsername(String username) {
     return userRepository.findGreenBayUserByUsername(username).get().getGreenBayDollarsAccount();
+  }
+
+  @Override
+  public GreenBayUser findUserByUsername(String username) throws NoSuchUserException {
+    Optional<GreenBayUser> optionalGreenBayUser = userRepository.findGreenBayUserByUsername(username);
+    return optionalGreenBayUser.orElseThrow(NoSuchUserException::new);
   }
 
 }

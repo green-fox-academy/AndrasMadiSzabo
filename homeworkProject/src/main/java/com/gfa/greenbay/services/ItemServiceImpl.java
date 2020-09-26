@@ -197,7 +197,7 @@ public class ItemServiceImpl implements ItemService {
 
   @Override
   public Page<SellableItem> findAllSellableItems(Integer pageNumber) {
-    Pageable firstPageWithTwoElements = PageRequest.of(pageNumber-1, 5);
-    return itemRepository.findAll(firstPageWithTwoElements);
+    Pageable pageOfSellableItems = PageRequest.of(pageNumber-1, 5);
+    return itemRepository.findAll(pageOfSellableItems);
   }
 }

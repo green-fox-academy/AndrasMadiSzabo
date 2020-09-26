@@ -1,6 +1,9 @@
 package com.gfa.greenbay.services;
 
 import com.gfa.greenbay.dtos.LoginRequestDTO;
+import com.gfa.greenbay.models.GreenBayUser;
+import com.gfa.greenbay.models.NoSuchUserException;
+import javax.sql.RowSet;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -17,4 +20,6 @@ public interface UserService {
   Long getUserIdByUsername(String username);
 
   int getgreenBayDollarsAccountByUsername(String username);
+
+  GreenBayUser findUserByUsername(String username) throws NoSuchUserException;
 }
