@@ -72,8 +72,12 @@ public class UserServiceImpl implements UserService {
   }
 
   @Override
-  public Long getUserIdByUsername(String username) {
-    return userRepository.findGreenBayUserByUsername(username).get().getId();
+  public Long getUserIdByUsername(String username) throws NoSuchUserException {
+    Optional<GreenBayUser> optionalUser = userRepository.findGreenBayUserByUsername(username);
+    if (optionalUser.isEmpty()){
+      throw new NoSuchUserException();
+    }
+    return optionalUser.get().getId();
   }
 
   @Override

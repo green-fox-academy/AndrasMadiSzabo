@@ -17,7 +17,7 @@ public interface UserService {
 
   void saveUser(String username, String password);
 
-  Long getUserIdByUsername(String username);
+  Long getUserIdByUsername(String username) throws NoSuchUserException;
 
   int getgreenBayDollarsAccountByUsername(String username);
 

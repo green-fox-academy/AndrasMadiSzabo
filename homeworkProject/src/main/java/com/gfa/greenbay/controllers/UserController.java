@@ -7,6 +7,7 @@ import com.gfa.greenbay.security.JwtTokenUtil;
 import com.gfa.greenbay.security.JwtUserDetailsService;
 import com.gfa.greenbay.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -29,7 +30,7 @@ public class UserController {
   public UserController(
       JwtTokenUtil jwtTokenUtil,
       JwtUserDetailsService userDetailsService,
-      UserService userService
+      @Qualifier(value = "use this") UserService userService
   ) {
     this.jwtTokenUtil = jwtTokenUtil;
     this.userDetailsService = userDetailsService;
@@ -41,7 +42,6 @@ public class UserController {
   @PostMapping("/login")
   public ResponseEntity<?> createAuthenticationToken (
       @RequestBody LoginRequestDTO loginRequestDTO) throws Exception {
-
 
     final HttpHeaders httpHeaders = new HttpHeaders();
     httpHeaders.setContentType(MediaType.APPLICATION_JSON);
@@ -95,7 +95,11 @@ public class UserController {
           .body("C'mon, user with name \"" + loginRequestDTO.username + "\" already exists in the database.");
     }
 
-    userService.saveUser(loginRequestDTO.username, loginRequestDTO.password);
+    try{
+      userService.saveUser(loginRequestDTO.username, loginRequestDTO.password);
+      } catch (Exception e){
+      return ResponseEntity.badRequest().build();
+    }
 
     if (userService.userNameExists(loginRequestDTO)){
       return ResponseEntity
